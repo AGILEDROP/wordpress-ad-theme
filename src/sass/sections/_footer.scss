@@ -1,0 +1,18 @@
+/*--------------------------------------------------------------
+## Media Footer
+--------------------------------------------------------------*/
+@import "media_footer";
+
+.footer-fb, .footer-insta, .footer-twit {
+
+  a {
+    color: transparent;
+  }
+}
+
+.footer-fb {
+  background-image: url("https://www.pngkey.com/png/detail/42-427177_fb-icon-cross.png");
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+}
