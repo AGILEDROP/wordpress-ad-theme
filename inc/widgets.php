@@ -22,5 +22,16 @@ function agiledrop_widgets_init() {
 		)
 	);
 
+	//Create Header Widget Area
+	register_sidebar( array(
+		'name'          => __( 'Header Widget Area', 'agiledrop'),
+		'id'            => 'agile-header-widget',
+		'description'   => __( 'Add widgets to appear in header.', 'agiledrop' ),
+		'before_widget' => '<div class="agile-header-widget">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="agile-widget-title">',
+		'after_title'   => '</h2>',
+
+	) );
 }
 add_action( 'widgets_init', 'agiledrop_widgets_init' );

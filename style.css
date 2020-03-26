@@ -1089,32 +1089,30 @@ object {
 --------------------------------------------------------------*/
 
 .agile-header {
+  background-color: transparent;
   position: absolute;
+  z-index: 9999;
   width: 100%;
-  z-index: 100;
-  padding: 20px 0 20px 0;
-  background-color: #032633;
-  color: #FEFEFF;
-  border-bottom: 1px solid rgba(254, 254, 255, 0.2);
-  transition: all ease-out 300ms;
 }
 
 .region-header {
   display: flex;
-  flex-wrap: wrap;
-  margin-left: -1.5625rem;
-  margin-right: -1.5625rem;
 }
 
-.agile-branding {
-  position: relative;
-  flex-wrap: wrap;
-  flex-grow: 0;
-  z-index: 10;
+.agile-main-menu {
+  width: 100%;
 }
 
-.agile-branding img {
-  max-width: 160px;
+.agile-main-menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.agile-main-menu ul li a {
+  display: block;
+  text-decoration: none;
 }
 
 /*--------------------------------------------------------------

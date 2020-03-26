@@ -54,13 +54,13 @@
 
 				<?php if ( has_nav_menu( 'main-menu' ) ) : ?>
 					<nav class="menu agile-main-menu" aria-label="<?php esc_attr_e( 'Main Menu', 'agiledrop' ); ?>">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'agiledrop' ); ?></button>
+						<!--<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'agiledrop' ); ?></button> -->
 						<?php
 						wp_nav_menu(
 							array(
 								'theme_location' => 'main-menu',
 								'menu_class'     => 'menu-item',
-								//'depth'          => 1,
+								'depth'          => 1,
 								'container'      => false,
 							)
 						);
@@ -70,3 +70,9 @@
 			</div><!-- .region-header -->
 		</div><!-- .container -->
 	</header><!-- .header-->
+
+	<?php
+
+	if ( is_active_sidebar( 'agile-header-widget' ) ) {
+		dynamic_sidebar( 'agile-header-widget' );
+	}
