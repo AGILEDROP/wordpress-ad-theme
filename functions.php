@@ -64,6 +64,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Custom Post Types.
+ */
+require get_template_directory() . '/inc/custom-post-types.php';
+
 //Create custom categories
 function create_business_locations () {
 	if (file_exists (ABSPATH.'/wp-admin/includes/taxonomy.php')) {
