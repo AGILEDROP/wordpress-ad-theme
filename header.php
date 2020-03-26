@@ -70,9 +70,8 @@
 			</div><!-- .region-header -->
 		</div><!-- .container -->
 	</header><!-- .header-->
-
-	<?php
-
-	if ( is_active_sidebar( 'agile-header-widget' ) ) {
-		dynamic_sidebar( 'agile-header-widget' );
-	}
+	<?php if ( function_exists( 'the_custom_header_markup' ) ) :
+		the_custom_header_markup();
+		else :
+		the_header_image_tag();
+	endif;

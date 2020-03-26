@@ -74,10 +74,10 @@ function agiledrop_theme_support()  {
 	 */
 	$header_args = array(
 		'default-image'          => '',
-		'width'                  => 0,
-		'height'                 => 0,
-		'flex-width'             => false,
-		'flex-height'            => false,
+		'width'                  => 1500,
+		'height'                 => 500,
+		'flex-width'             => true,
+		'flex-height'            => true,
 		'uploads'                => true,
 		'random-default'         => false,
 		'header-text'            => false,
@@ -119,6 +119,8 @@ function agiledrop_theme_support()  {
 	 * Add theme support for selective refresh for widgets.
 	 */
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+
 
 }
 add_action( 'after_setup_theme', 'agiledrop_theme_support' );
