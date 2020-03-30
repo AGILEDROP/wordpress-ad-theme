@@ -69,6 +69,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 require get_template_directory() . '/inc/custom-post-types.php';
 
+/**
+	Custom Blocks.
+ */
+require get_template_directory() . '/inc/blocks/class-agiledrop-blocks.php';
+new Agiledrop_Blocks();
+
 //Create custom categories
 function create_business_locations () {
 	if (file_exists (ABSPATH.'/wp-admin/includes/taxonomy.php')) {
@@ -79,3 +85,4 @@ function create_business_locations () {
 	}
 }
 add_action ( 'after_setup_theme', 'create_business_locations' );
+
