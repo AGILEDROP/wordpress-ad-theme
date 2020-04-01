@@ -69,11 +69,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 require get_template_directory() . '/inc/custom-post-types.php';
 
+
 /**
-	Custom Blocks.
+Custom Rest API
  */
-require get_template_directory() . '/inc/blocks/class-agiledrop-blocks.php';
-new Agiledrop_Blocks();
+require get_template_directory() . '/inc/agiledrop-rest-api.php';
+new Agiledrop_Rest();
 
 //Create custom categories
 function create_business_locations () {
@@ -86,3 +87,38 @@ function create_business_locations () {
 }
 add_action ( 'after_setup_theme', 'create_business_locations' );
 
+
+require_once get_template_directory() . '/class-tgm-plugin-activation.php';
+
+add_action( 'tgmpa_register', 'agiledrop_register_required_plugins' );
+
+function agiledrop_register_required_plugins() {
+	$plugins = array(
+		array(
+			'name'               => 'Agiledrop Blocks',
+			'slug'               => 'agiledrop-blocks',
+			'source'             => get_template_directory() . '/plugins/agiledrop-blocks.zip',
+			'required'           => true,
+			'version'            => '',
+			'force_activation'   => true,
+			'force_deactivation' => true,
+			'external_url'       => '',
+			'is_callable'        => '',
+		),
+	);
+
+	$config = array(
+		'id'           => 'agiledrop',
+		'default_path' => '',
+		'menu'         => 'agiledrop-install-plugins',
+		'parent_slug'  => 'themes.php',
+		'capability'   => 'edit_theme_options',
+		'has_notices'  => true,
+		'dismissable'  => true,
+		'dismiss_msg'  => '',
+		'is_automatic' => false,
+		'message'      => '',
+	);
+
+	tgmpa( $plugins, $config );
+}

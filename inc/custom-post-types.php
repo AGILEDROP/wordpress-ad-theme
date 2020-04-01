@@ -14,8 +14,24 @@ function agiledrop_create_post_type() {
 			'public'        => true,
 			'has_archive'   => true,
 			'rewrite'       => array( 'slug' => 'hero-text' ),
+            'show_in_rest'  => true
 		)
 	);
+
+
+	register_post_type( 'agiledrop-jobs',
+        array(
+             'labels' => array(
+                'name'          => __( 'Jobs', 'agiledrop' ),
+                'singular_name' => __( 'Job', 'agiledrop' ),
+             ),
+            'decription'    => __( 'This post type is meant for jobs posts', 'agiledrop' ),
+            'public'        => true,
+            'has_archive'   => true,
+            'rewrite'       => array( 'slug' => 'jobs' ),
+            'show_in_rest'  => true
+        )
+    );
 }
 
 add_action( 'init', 'agiledrop_create_post_type' );
