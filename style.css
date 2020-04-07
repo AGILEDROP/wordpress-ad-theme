@@ -1082,6 +1082,7 @@ object {
 
 .wp-custom-header iframe {
   width: 100%;
+  height: 100%;
 }
 
 .wp-custom-header button {
@@ -1100,37 +1101,128 @@ object {
 ## Media Header
 --------------------------------------------------------------*/
 
-.agile-header {
-  background-color: transparent;
+.header {
   position: absolute;
-  z-index: 9999;
   width: 100%;
+  z-index: 2;
+  border-bottom: 1px solid #fff;
+  padding: 20px 0;
+}
+
+.wp-custom-header {
+  height: 100%;
 }
 
 .region-header {
   display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
 }
 
-.agile-main-menu {
-  width: 100%;
+.agile-branding {
+  width: 30%;
 }
 
-.agile-main-menu ul {
+.agiledrop-main-menu {
+  width: 70%;
+}
+
+.agiledrop-main-menu ul {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   list-style: none;
 }
 
-.agile-main-menu ul li a {
-  display: block;
-  text-decoration: none;
+.agiledrop-main-menu ul li {
+  margin-right: 15px;
 }
 
-.agile-hero-text {
+.agiledrop-main-menu ul li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3rem;
+  padding: 15px;
+}
+
+.agiledrop-main-menu ul .menu-border {
+  border: 2px solid #ef4623;
+  border-radius: 50px;
+}
+
+.agiledrop-hero-text {
   position: absolute;
   top: 200px;
+  max-width: 40%;
+}
+
+.agiledrop-hero-text hr {
+  width: 115px;
+  height: 5px;
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+## Hero
+--------------------------------------------------------------*/
+
+.hero {
+  height: 700px;
+}
+
+.hero .agiledrop-opacity {
+  background-color: #032633;
+  z-index: 1;
+  height: 100%;
   width: 100%;
+  position: absolute;
+  -webkit-filter: opacity(0.6);
+          filter: opacity(0.6);
+}
+
+.hero .container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20%;
+  margin: 0 auto;
+}
+
+.hero-text {
+  position: relative;
+  max-width: 70%;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin: 0 auto;
+  font-weight: 200;
+  line-height: 1.1;
+}
+
+.hero-text hr {
+  height: 5px;
+  width: 115px;
+  background-color: #ef4623;
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+## Content
+--------------------------------------------------------------*/
+
+.agiledrop-row {
+  padding: 60px 0 30px 0;
+  align-items: center;
+}
+
+.agiledrop-column hr {
+  height: 3px;
+  width: 50px;
+  background-color: #ef4623;
 }
 
 /*--------------------------------------------------------------

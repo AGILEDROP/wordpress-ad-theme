@@ -1,0 +1,40 @@
+.hero {
+  height: 700px;
+  .agiledrop-opacity{
+    background-color: $color__hero-opacity;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    filter: opacity( 0.6 );
+  }
+
+  .container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20%;
+    margin: 0 auto;
+  }
+}
+
+.hero-text {
+  position: relative;
+  max-width: 70%;
+  z-index: 2;
+  color: $color__hero-text;
+
+  h1 {
+    font-size: 4rem;
+    margin: 0 auto;
+    font-weight: 200;
+    line-height: 1.1;
+  }
+
+  hr {
+    height: 5px;
+    width: 115px;
+    background-color: $color__hero-hr;
+    margin: 0;
+  }
+}

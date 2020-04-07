@@ -3,8 +3,9 @@
 
 
 get_header();
-?>
 
+get_template_part( 'template-parts/partials/agiledrop-hero');
+?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
             <div class="page-container container">
@@ -12,10 +13,8 @@ get_header();
 	            echo $post->post_content;
 	            ?>
             </div>
-
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 
 <?php
 get_footer();

@@ -28,9 +28,9 @@
 <div id="app" class="page">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'agiledrop' ); ?></a>
 
-	<header class="agile-header" role="header">
+	<header class="header" role="header">
 
-		<div class="header-container container">
+		<div class="container">
 
 			<div class="burger">
 				<div class="burger__wrapper">
@@ -53,7 +53,7 @@
 				</div><!-- .site-branding -->
 
 				<?php if ( has_nav_menu( 'main-menu' ) ) : ?>
-					<nav class="menu agile-main-menu" aria-label="<?php esc_attr_e( 'Main Menu', 'agiledrop' ); ?>">
+					<nav class="menu agiledrop-main-menu" aria-label="<?php esc_attr_e( 'Main Menu', 'agiledrop' ); ?>">
 						<!--<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'agiledrop' ); ?></button> -->
 						<?php
 						wp_nav_menu(
@@ -70,30 +70,7 @@
 			</div><!-- .region-header -->
 		</div><!-- .container -->
 	</header><!-- .header-->
-	<div class="agiledrop-custom-header">
-		<?php if ( function_exists( 'the_custom_header_markup' ) ) {
-			the_custom_header_markup();
-		}
-		else{
-			the_header_image_tag();
-		}?>
-		<?php  $posts = query_posts( 'post_type=agiledrop-hero' );
-		if ( !empty( $posts ) ) {
-			foreach ( $posts as $one ) {
-				$selected_page = get_post_meta( $one->ID, 'selected_page' );
-				if ( $selected_page[0] == $post->ID ) : ?>
-					<div class="agile-hero-text">
-						<div class="container">
-							<h1><?php echo $one->post_title;?></h1>
-							<hr>
-							<h4><?php echo $one->post_content; ?></h4>
-						</div>
-					</div>
-				<?php endif;
-			}
-		}
-		?>
-	</div>
+
 
 
 

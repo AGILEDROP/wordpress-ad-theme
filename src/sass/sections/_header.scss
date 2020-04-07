@@ -3,34 +3,63 @@
 --------------------------------------------------------------*/
 @import "media/media_header";
 
-.agile-header{
-  background-color: transparent;
-  position: absolute;
-  z-index: 9999;
+.header{
+  position:absolute;
   width: 100%;
+  z-index: 2;
+  border-bottom: 1px solid $color__header-border;
+  padding: 20px 0;
+}
+
+.wp-custom-header {
+  height: 100%;
 }
 
 .region-header{
   display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
+}
+.agile-branding{
+  width: 30%;
 }
 
-.agile-main-menu{
-  width: 100%;
+.agiledrop-main-menu{
+  width: 70%;
   ul{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     list-style:none;
 
+    li {
+      margin-right: 15px;
+    }
+
     li a {
       display: block;
       text-decoration: none;
+      color: $color__menu-link;
+      font-size: 1.3rem;
+      padding: 15px;
+    }
+
+    .menu-border {
+      border: 2px solid $color__menu-border;
+      border-radius: 50px;
     }
   }
 }
 
-.agile-hero-text {
-  position:absolute;
+.agiledrop-hero-text {
+  position: absolute;
   top: 200px;
-  width: 100%;
+  max-width: 40%;
+
+  hr {
+    width: 115px;
+    height: 5px;
+    margin: 0;
+  }
 }
+
