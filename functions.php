@@ -67,14 +67,22 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 /**
  * Custom Post Types.
  */
-require get_template_directory() . '/inc/custom-post-types.php';
+require get_template_directory() . '/inc/class-agiledrop-cpt.php';
+new Agiledrop_CPT();
 
+require get_template_directory() . '/inc/class-agiledrop-save-post.php';
+new Agiledrop_Save_Post();
 
 /**
 Custom Rest API
  */
-require get_template_directory() . '/inc/agiledrop-rest-api.php';
-new Agiledrop_Rest();
+require get_template_directory() . '/inc/class-agiledrop-rest-api.php';
+new Agiledrop_Rest_Api();
+
+/**
+ * Agiledrop Helper
+ */
+require  get_template_directory() . '/inc/class-agiledrop-helper.php';
 
 //Create custom categories
 function create_business_locations () {
