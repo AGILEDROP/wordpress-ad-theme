@@ -69,26 +69,6 @@ function agiledrop_theme_support()  {
 	);
 	//add_theme_support( 'custom-background', $background_args );
 
-	/*
-	 * Add theme support for Custom Header
-	 */
-	$header_args = array(
-		'default-image'          => '',
-		'width'                  => 1500,
-		'height'                 => 500,
-		'flex-width'             => true,
-		'flex-height'            => true,
-		'uploads'                => true,
-		'random-default'         => false,
-		'header-text'            => false,
-		'default-text-color'     => '',
-		'wp-head-callback'       => '',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => '',
-		'video'                  => true,
-		'video-active-callback'  => '',
-	);
-	add_theme_support( 'custom-header', $header_args );
 
 	/*
 	 * Add theme support for HTML5 Semantic Markup.
