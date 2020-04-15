@@ -9,8 +9,6 @@ function agiledrop_menus() {
 
 	$locations = array(
 		'main-menu' => __( 'Main Menu', 'agiledrop' ),
-		'footer-social-menu' => __( 'Footer Social Menu', 'agiledrop' ),
-		'footer-menu' => __( 'Footer Menu', 'agiledrop' ),
 	);
 
 	register_nav_menus( $locations );

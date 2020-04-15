@@ -35,8 +35,6 @@ if ( !class_exists( 'Agiledrop_helper' ) ) {
 			return false;
 		}
 
-
-
 		public function verify_nonce( $action, $field ){
 			if ( ! isset ( $_POST[$field] ) || ! wp_verify_nonce( $_POST[$field], $action ) ){
 				return false;
@@ -44,7 +42,10 @@ if ( !class_exists( 'Agiledrop_helper' ) ) {
 			return true;
 		}
 
-
+		public function posts_by_category( $category ) {
+			$cat_id = get_cat_ID( $category );
+			return get_posts( array( 'orderby' => 'date', 'order' => 'ASC', 'numberposts' => -1, 'category' => $cat_id, 'post_status' => 'publish' ) );
+		}
 
 	}
 }

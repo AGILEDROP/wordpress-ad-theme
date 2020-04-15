@@ -28,11 +28,6 @@ require get_template_directory() . '/inc/site-logo.php';
 require get_template_directory() . '/inc/menus.php';
 
 /**
- * Widgets.
- */
-require get_template_directory() . '/inc/widgets.php';
-
-/**
  * Custom Admin Menu Items.
  */
 require get_template_directory() . '/inc/admin-menus.php';
@@ -94,6 +89,16 @@ function create_business_locations () {
 	}
 }
 add_action ( 'after_setup_theme', 'create_business_locations' );
+
+require get_template_directory() . '/inc/class-agiledrop-widget.php';
+// Register and load the widget
+function agiledrop_load_widget() {
+	register_widget( 'agiledrop_widget' );
+}
+add_action( 'widgets_init', 'agiledrop_load_widget' );
+
+require get_template_directory() . '/inc/class-agiledrop-widget-area.php';
+new Agiledrop_Widget_Area();
 
 
 require_once get_template_directory() . '/class-tgm-plugin-activation.php';

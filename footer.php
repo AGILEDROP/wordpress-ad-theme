@@ -10,66 +10,36 @@
  */
 
 ?>
+<footer class="footer">
+    <div class="footer__top">
+        <div class="container">
 
-    <footer class="agile-footer">
-        <div class="footer-container container">
-            <div class="region region-footer">
-                <div class="block-footerinfo">
-                    <?php
-                        $cat_id = get_cat_ID( 'Business Locations');
-                        $posts = get_posts( array( 'orderby' => 'date', 'order' => 'ASC', 'numberposts' => -1, 'category' => $cat_id, 'post_status' => 'publish' ) );
-                        if ( !empty( $posts ) ) {
-                           foreach ( $posts as $post ) {
-                               echo "<h4>$post->post_title</h4>";
-                               echo "<p>$post->post_content</p>";
-                           }
-                        }
-                    ?>
-	                <?php if ( has_nav_menu( 'footer-social-menu' ) ) : ?>
-                        <nav class="footer-social-menu">
-			                <?php
-			                wp_nav_menu(
-				                array(
-					                'theme_location' => 'footer-social-menu',
-					                'menu_class'     => 'footer-social-menu__items',
-					                'depth'          => 1,
-				                )
-			                );
-			                ?>
-                        </nav>
-	                <?php endif; ?>
-                </div>
-                <div class="block-footer-menu">
-	                <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
-                        <nav class="footer-menu">
-			                <?php
-			                wp_nav_menu(
-				                array(
-					                'theme_location' => 'footer-menu',
-					                'menu_class'     => 'footer-menu__items',
-					                'depth'          => 1,
-				                )
-			                );
-			                ?>
-                        </nav>
-	                <?php endif; ?>
-                </div>
-            </div>
-        </div>
+                <?php
+                    if ( is_active_sidebar( 'left-footer-area' ) ) {
+                        dynamic_sidebar( 'left-footer-area' );
+                    }
+                ?>
 
-    </footer>
-    <div class="agile-copyright">
-        <div class="copyright-container container">
-            <div class="region region-copyright">
-                <div class="left"></div>
-                <div class="right"></div>
-            </div>
+
+                <?php
+                    if ( is_active_sidebar( 'right-footer-area' ) ) {
+                        dynamic_sidebar( 'right-footer-area' );
+                    }
+                 ?>
+
         </div>
     </div>
-
-</div><!-- #app -->
+    <div class="footer__bottom">
+        <div class="container">
+            <?php
+	            if ( is_active_sidebar( 'bottom-footer-area' ) ) {
+		            dynamic_sidebar( 'bottom-footer-area' );
+	            }
+	        ?>
+        </div>
+    </div>
+</footer>
 
 <?php wp_footer(); ?>
 </body>
-<kldsjfsldk></kldsjfsldk>
 </html>
