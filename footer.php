@@ -12,21 +12,31 @@
 ?>
 <footer class="footer">
     <div class="footer__top">
-        <div class="container">
+        <div class="footer__container container">
+            <div class="footer__left">
+                <div class="footer__inner-left">
+	                <?php
+	                if ( is_active_sidebar( 'top-left-left-footer' ) ) {
+		                dynamic_sidebar( 'top-left-left-footer' );
+	                }
+	                ?>
+                </div>
+                <div class="footer__inner-right">
+	                <?php
+	                if ( is_active_sidebar( 'top-left-right-footer' ) ) {
+		                dynamic_sidebar( 'top-left-right-footer' );
+	                }
+	                ?>
+                </div>
 
-                <?php
-                    if ( is_active_sidebar( 'left-footer-area' ) ) {
-                        dynamic_sidebar( 'left-footer-area' );
-                    }
-                ?>
-
-
-                <?php
-                    if ( is_active_sidebar( 'right-footer-area' ) ) {
-                        dynamic_sidebar( 'right-footer-area' );
-                    }
-                 ?>
-
+            </div>
+            <div class="footer__right">
+	            <?php
+	            if ( is_active_sidebar( 'top-right-footer' ) ) {
+		            dynamic_sidebar( 'top-right-footer' );
+	            }
+	            ?>
+            </div>
         </div>
     </div>
     <div class="footer__bottom">

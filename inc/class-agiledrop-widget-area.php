@@ -8,22 +8,31 @@ if ( ! class_exists('Agiledrop_Widget_Area' ) ) {
 
 		public function register_widget_area() {
 			register_sidebar( array(
-				'name'          => __( 'Left Footer Area', 'agiledrop' ),
-				'id'            => 'left-footer-area',
+				'name'          => __( 'Top Left Left Footer Area', 'agiledrop' ),
+				'id'            => 'top-left-left-footer',
 				'description'   => __( 'Add widgets here to appear in left column of the footer.', 'agiledrop' ),
-				'before_widget' =>  '<div class="footer__left">',
+				'before_widget' =>  '<div>',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3>',
+				'after_title'   => '</h3><hr>',
+			) );
+			register_sidebar( array(
+				'name'          => __( 'Top Left Right Footer Area', 'agiledrop' ),
+				'id'            => 'top-left-right-footer',
+				'description'   => __( 'Add widgets here to appear in left column of the footer.', 'agiledrop' ),
+				'before_widget' =>  '<div>',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3>',
 				'after_title'   => '</h3>',
 			) );
 			register_sidebar( array(
-				'name'          => __( 'Right Footer Area', 'agiledrop' ),
-				'id'            => 'right-footer-area',
+				'name'          => __( 'Top Right Footer Area', 'agiledrop' ),
+				'id'            => 'top-right-footer',
 				'description'   => __( 'Add widgets here to appear in right column of the footer.', 'agiledrop' ),
-				'before_widget' =>  '<div class="footer__right">',
+				'before_widget' =>  '<div>',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3>',
-				'after_title'   => '</h3>',
+				'after_title'   => '</h3><hr>',
 			) );
 			register_sidebar( array(
 				'name'          => __( 'Bottom Footer Area', 'agiledrop' ),
@@ -31,8 +40,8 @@ if ( ! class_exists('Agiledrop_Widget_Area' ) ) {
 				'description'   => __( 'Add widgets here to appear in the bottom of the footer.', 'agiledrop' ),
 				'before_widget' =>  '<div class="footer__copyright">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3>',
-				'after_title'   => '</h3>',
+				'before_title'  => '<div class="textwidget"><p>',
+				'after_title'   => '</p></div>',
 			) );
 
 		}

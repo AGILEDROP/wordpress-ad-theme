@@ -1249,16 +1249,30 @@ object {
 ## Media Footer
 --------------------------------------------------------------*/
 
-.footer-fb a,
-.footer-insta a,
-.footer-twit a {
-  color: transparent;
+.footer__bottom {
+  background-color: #1f2122;
+  color: #d4dbde;
 }
 
-.footer-fb {
-  background-image: url("https://www.pngkey.com/png/detail/42-427177_fb-icon-cross.png");
-  height: 50px;
-  width: 50px;
-  background-repeat: no-repeat;
+.footer__copyright {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__top {
+  background-color: #032633;
+  color: #FEFEFF;
+}
+
+.footer__container {
+  display: flex;
+}
+
+.footer__left {
+  display: flex;
+}
+
+.footer__right {
+  border-left: 1px solid #7f8689;
 }
 
