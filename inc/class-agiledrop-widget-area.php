@@ -43,6 +43,24 @@ if ( ! class_exists('Agiledrop_Widget_Area' ) ) {
 				'before_title'  => '<div class="textwidget"><p>',
 				'after_title'   => '</p></div>',
 			) );
+			register_sidebar( array(
+				'name'          => __( 'Left Main Content', 'agiledrop' ),
+				'id'            => 'left-main-content',
+				'description'   => __( 'Add widgets here to appear in left column', 'agiledrop' ),
+				'before_widget' =>  '<div>',
+				'after_widget'  => '</div>',
+				'before_title'  => '<div class="textwidget"><p>',
+				'after_title'   => '</p></div>',
+			) );
+			register_sidebar( array(
+				'name'          => __( 'Right Main Content', 'agiledrop' ),
+				'id'            => 'right-main-content',
+				'description'   => __( 'Add widgets here to appear in right column', 'agiledrop' ),
+				'before_widget' =>  '<div>',
+				'after_widget'  => '</div>',
+				'before_title'  => '<div class="textwidget"><p>',
+				'after_title'   => '</p></div>',
+			) );
 
 		}
 	}

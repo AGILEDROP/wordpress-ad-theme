@@ -114,6 +114,17 @@ function agiledrop_register_required_plugins() {
 			'external_url'       => '',
 			'is_callable'        => '',
 		),
+		array(
+			'name'               => 'Agiledrop Form',
+			'slug'               => 'agiledrop-form',
+			'source'             => get_template_directory() . '/plugins/agiledrop-form.zip',
+			'required'           => true,
+			'version'            => '',
+			'force_activation'   => true,
+			'force_deactivation' => true,
+			'external_url'       => '',
+			'is_callable'        => '',
+		),
 	);
 
 	$config = array(
