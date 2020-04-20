@@ -27,11 +27,6 @@ require get_template_directory() . '/inc/site-logo.php';
  */
 require get_template_directory() . '/inc/menus.php';
 
-/**
- * Custom Admin Menu Items.
- */
-require get_template_directory() . '/inc/admin-menus.php';
-
 
 /**
  * Custom template tags for this theme.
