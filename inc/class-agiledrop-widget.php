@@ -4,7 +4,7 @@ if ( ! class_exists( 'Agiledrop_Widget' ) ) {
 		public function __construct() {
 			parent::__construct(
 				'agiledrop_widget',
-				'Agiledrop_Widget',
+				'Agiledrop Widget',
 				array( 'description' => __( 'Widget to display business locations', 'agiledrop' ) )
 			);
 		}

@@ -47,5 +47,12 @@ if ( !class_exists( 'Agiledrop_helper' ) ) {
 			return get_posts( array( 'orderby' => 'date', 'order' => 'ASC', 'numberposts' => -1, 'category' => $cat_id, 'post_status' => 'publish' ) );
 		}
 
+		public function get_all_post_types() {
+			$args = array(
+				'public'   => true,
+			);
+			return get_post_types( $args );
+		}
+
 	}
 }
