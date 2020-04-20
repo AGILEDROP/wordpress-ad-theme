@@ -44,6 +44,13 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Agiledrop Taxonomies
+ */
+require get_template_directory() . '/inc/class-agiledrop-taxonomies.php';
+new Agiledrop_Taxonomies();
+
+
+/**
  * Custom Post Types.
  */
 require get_template_directory() . '/inc/class-agiledrop-cpt.php';
@@ -62,12 +69,6 @@ new Agiledrop_Rest_Api();
  * Agiledrop Helper
  */
 require  get_template_directory() . '/inc/class-agiledrop-helper.php';
-
-/**
- * Agiledrop Taxonomies
- */
-require get_template_directory() . '/inc/class-agiledrop-taxonomies.php';
-new Agiledrop_Taxonomies();
 
 
 require get_template_directory() . '/inc/class-agiledrop-widget.php';
