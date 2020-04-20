@@ -49,13 +49,6 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
- */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
-
-/**
  * Custom Post Types.
  */
 require get_template_directory() . '/inc/class-agiledrop-cpt.php';
@@ -87,11 +80,9 @@ function create_business_locations () {
 add_action ( 'after_setup_theme', 'create_business_locations' );
 
 require get_template_directory() . '/inc/class-agiledrop-widget.php';
-//require get_template_directory() . '/inc/class-agiledrop-search-widget.php';
 // Register and load the widget
 function agiledrop_load_widget() {
 	register_widget( 'agiledrop_widget' );
-	//register_widget( 'agiledrop_search_widget' );
 }
 add_action( 'widgets_init', 'agiledrop_load_widget' );
 
