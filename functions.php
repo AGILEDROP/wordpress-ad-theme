@@ -8,11 +8,11 @@
  */
 
 /**
- * Settings
+ * Menus
  */
+require get_template_directory() . '/inc/class-agiledrop-menus.php';
+new Agiledrop_Menus();
 
-require get_template_directory() . '/inc/class-agiledrop-settings.php';
-new Agiledrop_Settings();
 /**
  * Theme support
  */
@@ -27,11 +27,6 @@ require get_template_directory() . '/inc/enqueues.php';
  * Implements site logo.
  */
 require get_template_directory() . '/inc/site-logo.php';
-
-/**
- * Menus.
- */
-require get_template_directory() . '/inc/menus.php';
 
 
 /**
