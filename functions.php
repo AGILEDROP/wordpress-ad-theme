@@ -63,16 +63,12 @@ new Agiledrop_Rest_Api();
  */
 require  get_template_directory() . '/inc/class-agiledrop-helper.php';
 
-//Create custom categories
-function create_business_locations () {
-	if (file_exists (ABSPATH.'/wp-admin/includes/taxonomy.php')) {
-		require_once (ABSPATH.'/wp-admin/includes/taxonomy.php');
-		if ( ! get_cat_ID( 'Business Locations' ) ) {
-			wp_create_category( 'Business Locations' );
-		}
-	}
-}
-add_action ( 'after_setup_theme', 'create_business_locations' );
+/**
+ * Agiledrop Taxonomies
+ */
+require get_template_directory() . '/inc/class-agiledrop-taxonomies.php';
+new Agiledrop_Taxonomies();
+
 
 require get_template_directory() . '/inc/class-agiledrop-widget.php';
 // Register and load the widget
