@@ -87,11 +87,11 @@ function create_business_locations () {
 add_action ( 'after_setup_theme', 'create_business_locations' );
 
 require get_template_directory() . '/inc/class-agiledrop-widget.php';
-require get_template_directory() . '/inc/class-agiledrop-search-widget.php';
+//require get_template_directory() . '/inc/class-agiledrop-search-widget.php';
 // Register and load the widget
 function agiledrop_load_widget() {
 	register_widget( 'agiledrop_widget' );
-	register_widget( 'agiledrop_search_widget' );
+	//register_widget( 'agiledrop_search_widget' );
 }
 add_action( 'widgets_init', 'agiledrop_load_widget' );
 
