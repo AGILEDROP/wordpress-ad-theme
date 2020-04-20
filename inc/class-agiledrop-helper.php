@@ -18,9 +18,9 @@ if ( !class_exists( 'Agiledrop_helper' ) ) {
 			foreach ( $posts as $post ) {
 				$selected_page = get_post_meta( $post->ID, 'selected_page' );
 				if ( get_the_ID() == $selected_page[0] ) {
-					$video_src = get_post_meta( $post->ID, 'featured_video');
-					$image_url = get_the_post_thumbnail_url( $post->ID );
-					return array( 'title' => $post->post_title, 'content' => $post->post_content, 'background' => $this->select_background( $image_url, $video_src ) );
+					//$video_src = get_post_meta( $post->ID, 'featured_video');
+					//$image_url = get_the_post_thumbnail_url( $post->ID );
+					return array( 'title' => $post->post_title, 'content' => $post->post_content, /*'background' => $this->select_background( $image_url, $video_src ) */ );
 				}
 			}
 		}

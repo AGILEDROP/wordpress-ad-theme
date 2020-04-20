@@ -4,12 +4,9 @@ $hero = $helper->page_has_post( 'agiledrop-hero' );
  ?>
 <div class="hero">
     <div class="opacity"></div>
-    <?php if ( $hero['background'] ) {
-        echo $hero['background'];
-    } ?>
     <div class="hero__text">
         <h1 class="hero__heading"><?php if ( !empty( $hero['title'] ) ) echo $hero['title']; ?></h1>
         <hr>
-        <p class="hero__description"><?php if ( !empty( $hero['content'] ) ) echo $hero['content']; ?></p>
+        <?php if ( !empty( $hero['content'] ) ) echo $hero['content']; ?>
     </div>
 </div>
