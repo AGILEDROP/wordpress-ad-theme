@@ -13,21 +13,29 @@
 <footer class="footer">
     <div class="footer__top">
         <div class="footer__container container">
+
             <div class="footer__left">
-                <div class="footer__inner-left">
-	                <?php
-	                if ( is_active_sidebar( 'top-left-left-footer' ) ) {
-		                dynamic_sidebar( 'top-left-left-footer' );
-	                }
-	                ?>
-                </div>
-                <div class="footer__inner-right">
-	                <?php
-	                if ( is_active_sidebar( 'top-left-right-footer' ) ) {
-		                dynamic_sidebar( 'top-left-right-footer' );
-	                }
-	                ?>
-                </div>
+            	<?php
+                if ( is_active_sidebar( 'top-left-footer' ) ) {
+	                dynamic_sidebar( 'top-left-footer' );
+                }
+                ?>
+                <div class="footer__inner">
+	                <div class="footer__inner-left">
+		                <?php
+		                if ( is_active_sidebar( 'top-left-left-footer' ) ) {
+			                dynamic_sidebar( 'top-left-left-footer' );
+		                }
+		                ?>
+	                </div>
+	                <div class="footer__inner-right">
+		                <?php
+		                if ( is_active_sidebar( 'top-left-right-footer' ) ) {
+			                dynamic_sidebar( 'top-left-right-footer' );
+		                }
+		                ?>
+	                </div>
+	            </div>
 
             </div>
             <div class="footer__right">
@@ -41,11 +49,8 @@
     </div>
     <div class="footer__bottom">
         <div class="container">
-            <?php
-	            if ( is_active_sidebar( 'bottom-footer-area' ) ) {
-		            dynamic_sidebar( 'bottom-footer-area' );
-	            }
-	        ?>
+            <div class="footer__copyright">&copy; 2013-<?php echo date('Y'); ?> AGILEDROP D.O.O.</div>
+			<div class="footer__cms">Sistem za izdelavo spletnih strani: <a href="#">Wordpress</a></div>
         </div>
     </div>
 </footer>

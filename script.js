@@ -284,8 +284,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ziga/Documents/wordpress-onboarding/docroot/wp-content/themes/agiledrop/src/script.js */"./src/script.js");
-module.exports = __webpack_require__(/*! /home/ziga/Documents/wordpress-onboarding/docroot/wp-content/themes/agiledrop/src/sass/style.scss */"./src/sass/style.scss");
+__webpack_require__(/*! /Users/martinkenjic/vagrant-local/www/agiledrop/public_html/wp-content/themes/wordpress-ad-theme/src/script.js */"./src/script.js");
+module.exports = __webpack_require__(/*! /Users/martinkenjic/vagrant-local/www/agiledrop/public_html/wp-content/themes/wordpress-ad-theme/src/sass/style.scss */"./src/sass/style.scss");
 
 
 /***/ })

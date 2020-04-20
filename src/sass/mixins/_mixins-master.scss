@@ -27,3 +27,21 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+@mixin breakpoint($breakpoint: $width-sm, $mobilefirst:true) {
+	@if (unit($breakpoint) == 'rem') {
+		$breakpoint: strip-unit($breakpoint) +"em"; // Safari can't handle rem media queries
+	}
+
+	@if ($mobilefirst) {
+		@media (min-width: #{$breakpoint}) {
+			@content;
+		}
+	}
+
+	@else {
+		@media (max-width: #{($breakpoint - 1)}) {
+			@content;
+		}
+	}
+}
