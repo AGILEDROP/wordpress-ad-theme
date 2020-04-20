@@ -11,8 +11,8 @@ if ( !class_exists( 'Agiledrop_CPT' ) ) {
 			register_post_type( 'agiledrop-hero',
 				array(
 					'labels' => array(
-						'name'          => __( 'Hero Texts', 'agiledrop' ),
-						'singular_name' => __( 'Hero Text', 'agiledrop' ),
+						'name'          => __( 'Hero', 'agiledrop' ),
+						'singular_name' => __( 'Hero', 'agiledrop' ),
 					),
 					'description'           => __( 'This post will be displayed on hero image/video.', 'agiledrop' ),
 					'supports'              => array( 'title','editor', 'thumbnail'),
@@ -22,6 +22,8 @@ if ( !class_exists( 'Agiledrop_CPT' ) ) {
 					'rewrite'               => array( 'slug' => 'hero-text' ),
 					'show_in_rest'          => true,
 					'register_meta_box_cb'  => array( $this, 'create_meta_boxes' ),
+                    'show_ui'               => true,
+                    'show_in_menu'          => 'agiledrop-page'
 				)
 			);
 
@@ -37,7 +39,9 @@ if ( !class_exists( 'Agiledrop_CPT' ) ) {
 					'public'        => true,
 					'has_archive'   => true,
 					'rewrite'       => array( 'slug' => 'jobs' ),
-					'show_in_rest'  => true
+					'show_in_rest'  => true,
+					'show_ui'               => true,
+					'show_in_menu'          => 'agiledrop-page'
 				)
 			);
 
@@ -53,7 +57,9 @@ if ( !class_exists( 'Agiledrop_CPT' ) ) {
                         'public'        => true,
                         'has_archive'   => true,
                         'rewrite'       => array( 'slug' => 'employees' ),
-                        'show_in_rest'  => true
+                        'show_in_rest'  => true,
+                        'show_ui'               => true,
+                        'show_in_menu'          => 'agiledrop-page'
                 )
             );
 		}

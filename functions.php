@@ -8,6 +8,12 @@
  */
 
 /**
+ * Settings
+ */
+
+require get_template_directory() . '/inc/class-agiledrop-settings.php';
+new Agiledrop_Settings();
+/**
  * Theme support
  */
 require get_template_directory() . '/inc/theme-support.php';
