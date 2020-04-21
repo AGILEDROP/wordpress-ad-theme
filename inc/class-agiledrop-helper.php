@@ -17,20 +17,25 @@ if ( !class_exists( 'Agiledrop_helper' ) ) {
 			$posts = $this->posts_from_cpt( $post_type );
 			foreach ( $posts as $post ) {
 				$selected_page = get_post_meta( $post->ID, 'selected_page' );
-				if ( get_the_ID() == $selected_page[0] ) {
-					//$video_src = get_post_meta( $post->ID, 'featured_video');
-					//$image_url = get_the_post_thumbnail_url( $post->ID );
-					return array( 'title' => $post->post_title, 'content' => $post->post_content, /*'background' => $this->select_background( $image_url, $video_src ) */ );
+				if ( !empty($selected_page) ) {
+					if ( get_the_ID() == $selected_page[0] ) {
+						$video_src = get_post_meta( $post->ID, 'featured_video');
+						$image_url = get_the_post_thumbnail_url( $post->ID );
+						return array( 'title' => $post->post_title, 'content' => $post->post_excerpt, 'background' => $this->select_background( $image_url, $video_src ) );
+					}
 				}
+
 			}
 		}
 
 		private function select_background( $image, $video ) {
 			if ( ! empty( $video[0] ) ) {
-				return '<div class="hero__video"><iframe src="' . $video[0] . '"></iframe></div>';
+				return '<video autoplay muted loop id="myVideo">
+  							<source src="' . $video[0] .  '" type="video/mp4">
+						</video>';
 			}
 			if ( ! empty( $image[0] ) ) {
-				return '<div class="hero__image"><img src=' . $image . '></div>';
+				return '<img src=' . $image . '>';
 			}
 			return false;
 		}
