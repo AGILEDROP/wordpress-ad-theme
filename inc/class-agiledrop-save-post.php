@@ -14,8 +14,8 @@ if ( ! class_exists( 'Agiledrop_Save_Post' ) ) {
 						if ( isset( $_POST['selected_page' ] ) ) {
 							update_post_meta( $_POST['ID'], 'selected_page', $_POST['selected_page'] );
 						}
-						if ( isset( $_POST['featured_video'] ) ) {
-							update_post_meta( $_POST['ID'], 'featured_video', $_POST['featured_video'] );
+						if ( isset( $_POST['video_URL'] ) ) {
+							update_post_meta( $_POST['ID'], 'featured_video', $_POST['video_URL'] );
 						}
 					}
 				}
