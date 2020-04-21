@@ -95,20 +95,28 @@ if ( !class_exists( 'Agiledrop_CPT' ) ) {
 
 		public function select_page( $post ) {
 			wp_nonce_field( 'agiledrop_save', 'select_page_nonce' );
-			$pages = get_pages();
-			?>
-			<p>
-				<?php
-				if ( !empty( $pages ) ) {
-					foreach ( $pages as $page ) : ?>
-						<input type="checkbox" name="selected_page" value="<?php echo $page->ID; ?> "> <?php echo $page->post_title; ?>
-						<br>
-					<?php endforeach;
-				}
-				?>
+			$pages          = get_pages();
 
-			</p>
-			<?php
+			$value = get_post_meta( $_GET['post'], 'selected_pages' );
+			$selected_pages = explode( '.', $value[0] );
+
+			$print_pages = array();
+			foreach ( $pages as $page ) {
+			    $print_pages[$page->ID] = array( 'title' => $page->post_title, 'checked' => '' );
+			}
+
+			foreach ( $selected_pages as $selected ) {
+			    foreach ( $print_pages as $key => $value ) {
+			        if ( $key == $selected ) {
+			            $print_pages[$key]['checked'] = 'checked';
+			        }
+			    }
+			}
+
+			foreach ( $print_pages as $key => $value  ) : ?>
+                <input type="checkbox" name="selected_pages[]" value="<?php echo $key; ?>" <?php echo $value['checked']?>><?php echo $value['title']; ?> <br>
+			<?php endforeach;
+
 		}
 	}
 }
