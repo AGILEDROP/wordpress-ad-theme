@@ -5,13 +5,8 @@ if ( !class_exists( 'Agiledrop_CPT' ) ) {
 
 		public function __construct() {
 			add_action( 'init', array( $this, 'create_post_types' ) );
-			add_action('admin_print_scripts', array( $this,'my_admin_scripts'));
-			add_action('admin_print_styles',  array( $this, 'my_admin_styles'));
 		}
 
-
-		function my_admin_scripts() { wp_enqueue_script('jquery'); wp_enqueue_script('media-upload');   wp_enqueue_script('thickbox'); }
-		function my_admin_styles()  { wp_enqueue_style('thickbox'); }
 		public function create_post_types() {
 			register_post_type( 'agiledrop-hero',
 				array(
@@ -90,53 +85,11 @@ if ( !class_exists( 'Agiledrop_CPT' ) ) {
 
 		public function upload_video() {
 			wp_nonce_field( 'agiledrop_save', 'featured_video_nonce' );
-
 			?>
             <label for="video_URL">Upload a video</label>
             <input id="video_URL" type="text" size="24" name="video_URL"  />
             <input id="upload_video_button" class="button" type="button" value="Upload" />
             <p>If there is no video, we set featured image as background</p>
-            <script>
-
-
-                jQuery(document).ready(function($){
-                    $('#video-metabox.postbox').css('margin-top','30px');
-
-                    var custom_uploader;
-                    $('#upload_video_button').click(function(e) {
-
-                        e.preventDefault();
-
-                        //If the uploader object has already been created, reopen the dialog
-                        if (custom_uploader) {
-                            custom_uploader.open();
-                            return;
-                        }
-
-                        //Extend the wp.media object
-                        custom_uploader = wp.media.frames.file_frame = wp.media({
-                            title: 'Choose a Video',
-                            button: {
-                                text: 'Choose a Video'
-                            },
-                            multiple: false
-                        });
-
-                        //When a file is selected, grab the URL and set it as the text field's value
-                        custom_uploader.on('select', function() {
-                            attachment = custom_uploader.state().get('selection').first().toJSON();
-                            $('#video_URL').val(attachment.url);
-
-                        });
-
-                        //Open the uploader dialog
-                        custom_uploader.open();
-
-                    });
-
-
-                });
-            </script>
 			<?php
 		}
 
