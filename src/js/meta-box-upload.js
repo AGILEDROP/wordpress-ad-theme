@@ -16,6 +16,9 @@ jQuery(document).ready(function($){
             button: {
                 text: 'Choose a Video'
             },
+            library: {
+                type: [ 'video' ]
+            },
             multiple: false
         });
 

@@ -85,9 +85,9 @@ if ( !class_exists( 'Agiledrop_CPT' ) ) {
 
 		public function upload_video() {
 			wp_nonce_field( 'agiledrop_save', 'featured_video_nonce' );
-			?>
+			$value = get_post_meta( $_GET['post'], 'featured_video' ); ?>
             <label for="video_URL">Upload a video</label>
-            <input id="video_URL" type="text" size="24" name="video_URL"  />
+            <input id="video_URL" type="text" size="24" name="video_URL" placeholder="Upload a video" value="'<?php echo $value[0]; ?>'"/>
             <input id="upload_video_button" class="button" type="button" value="Upload" />
             <p>If there is no video, we set featured image as background</p>
 			<?php

@@ -15,11 +15,23 @@ if ( ! class_exists( 'Agiledrop_Save_Post' ) ) {
 							update_post_meta( $_POST['ID'], 'selected_page', $_POST['selected_page'] );
 						}
 						if ( isset( $_POST['video_URL'] ) ) {
-							update_post_meta( $_POST['ID'], 'featured_video', $_POST['video_URL'] );
+							if ( $this->validate_video( $_POST['video_URL'] ) ) {
+								update_post_meta( $_POST['ID'], 'featured_video', $_POST['video_URL'] );
+							}
 						}
 					}
 				}
 			}
+		}
+
+		private function validate_video( $video ) {
+			$allowed_formats = array('ogg', 'ogv', 'avi', 'mov', 'wmv', 'flv', 'mp4' );
+			$input = explode( '.', $video );
+			$input_format = end( $input );
+			if ( in_array( $input_format, $allowed_formats ) ) {
+				return true;
+			}
+			return false;
 		}
 
 	}
