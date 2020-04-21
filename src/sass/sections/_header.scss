@@ -1,62 +1,77 @@
 .header {
 	position: absolute;
+	display: flex;
 	width: 100%;
 	z-index: 2;
-	//border-bottom: 1px solid $color__header-border;
 	border-bottom: 1px solid rgba(254, 254, 255, 0.2);
 	padding: 20px 0;
 }
 
-.wp-custom-header {
-	height: 100%;
-}
-
-.region-header {
+.header__container {
+	position: relative;
 	display: flex;
-	flex-wrap: wrap;
-	line-height: 1;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+	padding-left: 25px;
+	padding-right: 25px;
 }
 
-.agile-branding {
-	width: 30%;
+.header__logo {
+	display: flex;
 }
 
-.agiledrop-main-menu {
-	width: 70%;
+.header__menu {
+	display: flex;
 
 	ul {
 		display: flex;
 		flex-direction: row;
-		justify-content: flex-end;
-		list-style:none;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
 
 		li {
+			display: flex;
+			align-items: center;
 			margin-right: 15px;
 		}
 
-		li a {
-			display: block;
-			text-decoration: none;
-			color: $color__menu-link;
-			font-size: 1.3rem;
-			padding: 15px;
+		li {
+			a {
+				display: block;
+				text-decoration: none;
+				color: $color__menu-link;
+				font-size: 15px;
+				font-family: "Montserrat", sans-serif;
+				font-weight: 500;
+				padding: 20px;
+				transition: 0.2s all;
+			}
+
+			a:hover {
+				color: $color__menu-border;
+				transition: 0.2s all;
+			}
 		}
 
-		.menu-border {
-			border: 2px solid $color__menu-border;
-			border-radius: 50px;
+		.header__button {
+			a {
+				border: 2px solid $color__menu-border;
+				border-radius: 50px;
+				font-size: 13px;
+				padding: 10px 25px;
+				transition: 0.2s all;
+			}
+
+			a:hover {
+				color: $color__menu-border;
+				transition: 0.2s all;
+			}
 		}
-	}
-}
-
-.agiledrop-hero-text {
-	position: absolute;
-	top: 200px;
-	max-width: 40%;
-
-	hr {
-		width: 115px;
-		height: 5px;
-		margin: 0;
 	}
 }

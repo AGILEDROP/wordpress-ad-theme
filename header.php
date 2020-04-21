@@ -29,30 +29,14 @@
 
 	<header class="header" role="header">
 
-		<div class="container">
+		<div class="header__container">
 
-			<div class="burger">
-				<div class="burger__wrapper">
-					<span class="burger__line"></span>
-					<span class="burger__line"></span>
-					<span class="burger__line"></span>
+				<div class="header__logo">
+					<?php agiledrop_site_logo(); ?>
 				</div>
-			</div>
-
-			<div class="region region-header">
-
-				<div class="agile-branding">
-					<?php
-					// Site title or logo.
-					agiledrop_site_logo();
-
-					// Site description.
-					agiledrop_site_description();
-					?>
-				</div><!-- .site-branding -->
 
 				<?php if ( has_nav_menu( 'main-menu' ) ) : ?>
-					<nav class="menu agiledrop-main-menu" aria-label="<?php esc_attr_e( 'Main Menu', 'agiledrop' ); ?>">
+					<nav class="header__menu" aria-label="<?php esc_attr_e( 'Main Menu', 'agiledrop' ); ?>">
 						<!--<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'agiledrop' ); ?></button> -->
 						<?php
 						wp_nav_menu(
@@ -66,6 +50,5 @@
 						?>
 					</nav><!-- .main-menu -->
 				<?php endif; ?>
-			</div><!-- .region-header -->
 		</div><!-- .container -->
 	</header><!-- .header-->
