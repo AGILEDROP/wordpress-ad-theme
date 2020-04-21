@@ -1,65 +1,62 @@
-/*--------------------------------------------------------------
-## Media Header
---------------------------------------------------------------*/
-@import "media/media_header";
-
-.header{
-  position:absolute;
-  width: 100%;
-  z-index: 2;
-  border-bottom: 1px solid $color__header-border;
-  padding: 20px 0;
+.header {
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+	//border-bottom: 1px solid $color__header-border;
+	border-bottom: 1px solid rgba(254, 254, 255, 0.2);
+	padding: 20px 0;
 }
 
 .wp-custom-header {
-  height: 100%;
+	height: 100%;
 }
 
-.region-header{
-  display: flex;
-  flex-wrap: wrap;
-  line-height: 1;
-}
-.agile-branding{
-  width: 30%;
+.region-header {
+	display: flex;
+	flex-wrap: wrap;
+	line-height: 1;
 }
 
-.agiledrop-main-menu{
-  width: 70%;
-  ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    list-style:none;
+.agile-branding {
+	width: 30%;
+}
 
-    li {
-      margin-right: 15px;
-    }
+.agiledrop-main-menu {
+	width: 70%;
 
-    li a {
-      display: block;
-      text-decoration: none;
-      color: $color__menu-link;
-      font-size: 1.3rem;
-      padding: 15px;
-    }
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		list-style:none;
 
-    .menu-border {
-      border: 2px solid $color__menu-border;
-      border-radius: 50px;
-    }
-  }
+		li {
+			margin-right: 15px;
+		}
+
+		li a {
+			display: block;
+			text-decoration: none;
+			color: $color__menu-link;
+			font-size: 1.3rem;
+			padding: 15px;
+		}
+
+		.menu-border {
+			border: 2px solid $color__menu-border;
+			border-radius: 50px;
+		}
+	}
 }
 
 .agiledrop-hero-text {
-  position: absolute;
-  top: 200px;
-  max-width: 40%;
+	position: absolute;
+	top: 200px;
+	max-width: 40%;
 
-  hr {
-    width: 115px;
-    height: 5px;
-    margin: 0;
-  }
+	hr {
+		width: 115px;
+		height: 5px;
+		margin: 0;
+	}
 }
-

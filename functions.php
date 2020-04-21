@@ -126,3 +126,8 @@ function agiledrop_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
+
+/**
+ * Enable SVG media.
+ */
+require get_template_directory() . '/inc/svg.php';

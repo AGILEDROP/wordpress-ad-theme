@@ -26,7 +26,6 @@
 } ?>
 
 <div id="app" class="page">
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'agiledrop' ); ?></a>
 
 	<header class="header" role="header">
 
@@ -70,10 +69,3 @@
 			</div><!-- .region-header -->
 		</div><!-- .container -->
 	</header><!-- .header-->
-
-
-
-
-
-
-

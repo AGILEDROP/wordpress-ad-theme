@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@200;
 
-700&display=swap);/*!
+700&family=Open+Sans:wght@400;700&display=swap);/*!
 Theme Name: Agiledrop
 Theme URI: http://underscores.me/
 Author: Agiledrop
@@ -47,19 +47,9 @@ This theme uses CSS BEM (Block Element Modifier) methodology.
 	## Galleries
 --------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
 
-/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 
-/* Document
-	 ========================================================================== */
 
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
 html {
   line-height: 1.15;
   /* 1 */
@@ -434,7 +424,7 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5;
@@ -1099,15 +1089,11 @@ object {
 ## Header
 --------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
-## Media Header
---------------------------------------------------------------*/
-
 .header {
   position: absolute;
   width: 100%;
   z-index: 2;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgba(254, 254, 255, 0.2);
   padding: 20px 0;
 }
 
@@ -1170,7 +1156,42 @@ object {
 --------------------------------------------------------------*/
 
 .hero {
-  height: 700px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero__heading {
+  position: absolute;
+  font-size: 60px;
+  color: #FFFFFF;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+  max-width: 60%;
+}
+
+.hero p:first-of-type {
+  position: absolute;
+}
+
+.hero .wp-block-video {
+  max-height: 650px;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.hero .wp-block-video video {
+  width: 100%;
+}
+
+.hero__opacity {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #032633;
+  opacity: 0.8;
 }
 
 .hero .agiledrop-opacity {
