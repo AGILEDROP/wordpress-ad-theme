@@ -8,6 +8,12 @@
  */
 
 /**
+ * Menus
+ */
+require get_template_directory() . '/inc/class-agiledrop-menus.php';
+new Agiledrop_Menus();
+
+/**
  * Theme support
  */
 require get_template_directory() . '/inc/theme-support.php';
@@ -21,11 +27,6 @@ require get_template_directory() . '/inc/enqueues.php';
  * Implements site logo.
  */
 require get_template_directory() . '/inc/site-logo.php';
-
-/**
- * Menus.
- */
-require get_template_directory() . '/inc/menus.php';
 
 
 /**
@@ -42,6 +43,13 @@ require get_template_directory() . '/inc/template-functions.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Agiledrop Taxonomies
+ */
+require get_template_directory() . '/inc/class-agiledrop-taxonomies.php';
+new Agiledrop_Taxonomies();
+
 
 /**
  * Custom Post Types.
@@ -62,12 +70,6 @@ new Agiledrop_Rest_Api();
  * Agiledrop Helper
  */
 require  get_template_directory() . '/inc/class-agiledrop-helper.php';
-
-/**
- * Agiledrop Taxonomies
- */
-require get_template_directory() . '/inc/class-agiledrop-taxonomies.php';
-new Agiledrop_Taxonomies();
 
 
 require get_template_directory() . '/inc/class-agiledrop-widget.php';

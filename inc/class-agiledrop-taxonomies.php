@@ -7,6 +7,7 @@ if ( ! class_exists( 'Agiledrop_Taxonomies' ) ) {
 
 		public function __construct() {
 			add_action( 'init', array( $this, 'create_taxonomy' ) );
+			add_action( 'after_theme_setup', array( $this, 'create_terms' ) );
 		}
 
 		public function create_taxonomy() {
@@ -26,17 +27,16 @@ if ( ! class_exists( 'Agiledrop_Taxonomies' ) ) {
 
 			register_taxonomy('agiledrop-categories',array('post'), array(
 				'hierarchical' => true,
+				'public' => true,
 				'labels' => $labels,
 				'show_ui' => true,
 				'show_admin_column' => true,
 				'query_var' => true,
 				'rewrite' => array( 'slug' => 'agiledrop-categories' ),
 			));
-			$this->create_terms();
-			$a = 1;
 		}
 
-		private function create_terms() {
+		public function create_terms() {
 			foreach ( $this->cpt_names as $name ) {
 				if ( ! get_term( $name ) ) {
 					wp_insert_term( $name, 'agiledrop-categories' );
