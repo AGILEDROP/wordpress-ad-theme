@@ -4,19 +4,31 @@ if ( !class_exists( 'Agiledrop_helper' ) ) {
 		public function __construct() {
 
 		}
-		private function posts_from_cpt( $post_type ) {
-			$args = array(
-				'numberposts'   => -1,
-				'post_type'     => $post_type,
-			);
-			return get_posts( $args );
+
+		public function posts_from_cpt( $post_type ) {
+			return get_posts( array( 'numberposts' => -1, 'post_type' => $post_type) );
 		}
 
+
+		public function checkbox_values( $post_id, $checkboxes, $checkbox_item ) {
+			$selected_pages = get_post_meta( $post_id, 'selected_pages' );
+			if ( ! empty( $selected_pages ) ) {
+				$selected_pages = explode( '.', $selected_pages[0] );
+				foreach ( $selected_pages as $selected ) {
+					foreach ( $checkboxes as $a => $b ) {
+						if ( $selected == $b['id'] ) {
+							$checkboxes[$a][$checkbox_item]= $checkbox_item;
+						}
+					}
+				}
+			}
+			return $checkboxes;
+		}
 
 		public function page_has_post( $post_type ) {
 			$posts = $this->posts_from_cpt( $post_type );
 			foreach ( $posts as $post ) {
-				$selected_page = get_post_meta( $post->ID, 'selected_page' );
+				$selected_page = get_post_meta( $post->ID, 'selected_pages' );
 				if ( !empty($selected_page) ) {
 					if ( get_the_ID() == $selected_page[0] ) {
 						$video_src = get_post_meta( $post->ID, 'featured_video');
@@ -58,6 +70,5 @@ if ( !class_exists( 'Agiledrop_helper' ) ) {
 			);
 			return get_post_types( $args );
 		}
-
 	}
 }
