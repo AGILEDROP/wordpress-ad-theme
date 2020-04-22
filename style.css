@@ -395,6 +395,23 @@ template {
   display: none;
 }
 
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
 .header {
   position: absolute;
   display: flex;
@@ -789,6 +806,28 @@ template {
   .hero__heading {
     font-size: 70px;
   }
+}
+
+.content-area {
+  margin-top: 60px;
+}
+
+.content-area h2 {
+  position: relative;
+  margin-bottom: 15px;
+  padding-bottom: 30px;
+  color: #032633;
+}
+
+.content-area h2::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  width: 115px;
+  background-color: #FF9F09;
 }
 
 .agiledrop-row {
