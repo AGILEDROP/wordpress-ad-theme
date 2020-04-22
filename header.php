@@ -35,15 +35,23 @@
 					<?php agiledrop_site_logo(); ?>
 				</div>
 
+				<div class="header__burger" data-js="burgerBtn">
+					<div class="burger__wrapper">
+						<span class="burger__line"></span>
+						<span class="burger__line"></span>
+						<span class="burger__line"></span>
+					</div>
+				</div>
+
 				<?php if ( has_nav_menu( 'main-menu' ) ) : ?>
-					<nav class="header__menu" aria-label="<?php esc_attr_e( 'Main Menu', 'agiledrop' ); ?>">
+					<nav class="header__menu" data-js="mainNav" aria-label="<?php esc_attr_e( 'Main Menu', 'agiledrop' ); ?>">
 						<!--<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Main Menu', 'agiledrop' ); ?></button> -->
 						<?php
 						wp_nav_menu(
 							array(
 								'theme_location' => 'main-menu',
 								'menu_class'     => 'menu-item',
-								'depth'          => 1,
+								'depth'          => 2,
 								'container'      => false,
 							)
 						);

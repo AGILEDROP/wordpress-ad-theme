@@ -399,7 +399,7 @@ template {
   position: absolute;
   display: flex;
   width: 100%;
-  z-index: 2;
+  z-index: 10;
   border-bottom: 1px solid rgba(254, 254, 255, 0.2);
   padding: 20px 0;
 }
@@ -421,52 +421,237 @@ template {
   display: flex;
 }
 
-.header__menu {
-  display: flex;
+.header__logo img {
+  max-width: 160px;
 }
 
-.header__menu ul {
+.header__burger {
+  position: relative;
   display: flex;
-  flex-direction: row;
+  width: 24px;
+  height: 24px;
+  z-index: 11;
+}
+
+.header__burger .burger__wrapper {
+  width: 100%;
+}
+
+.header__burger .burger__line {
+  display: block;
+  height: 2px;
+  margin: 5px 0;
+  background-color: #FEFEFF;
+  transition: 0.2s ease-in-out;
+}
+
+.header__menu {
+  display: none;
+}
+
+.header__responsive {
+  position: absolute;
+  width: 100%;
+  top: 54px;
+  left: 0;
+  display: flex;
+  background: rgba(3, 38, 51, 0.95);
+}
+
+.header__responsive ul {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   margin: 0;
   padding: 0;
   list-style-type: none;
+  width: 100%;
 }
 
-.header__menu ul li {
+.header__responsive ul li {
+  position: relative;
   display: flex;
   align-items: center;
-  margin-right: 15px;
+  flex-direction: column;
+  width: 100%;
 }
 
-.header__menu ul li a {
+.header__responsive ul li .sub-menu {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+
+.header__responsive ul li ul.sub-menu li a {
+  font-size: 16px;
+}
+
+.header__responsive ul li a {
   display: block;
   text-decoration: none;
   color: #fff;
-  font-size: 15px;
+  font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   padding: 20px;
   transition: 0.2s all;
 }
 
-.header__menu ul li a:hover {
+.header__responsive ul li a:hover {
   color: #ef4623;
   transition: 0.2s all;
 }
 
-.header__menu ul .header__button a {
-  border: 2px solid #ef4623;
-  border-radius: 50px;
-  font-size: 13px;
-  padding: 10px 25px;
-  transition: 0.2s all;
+.header__responsive ul li.menu-item-has-children::after {
+  content: "";
+  background-image: url(/wp-content/themes/wordpress-ad-theme/images/chevron-white.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  top: 10px;
+  transform: rotate(90deg);
+  background-size: 20px 20px;
+  background-position: center center;
+  transition: all 0.3s ease-in-out;
 }
 
-.header__menu ul .header__button a:hover {
-  color: #ef4623;
-  transition: 0.2s all;
+.header__responsive ul li.menu-item-has-children.expanded ul.sub-menu {
+  display: block;
+  max-height: 500px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.header__responsive ul li.menu-item-has-children.expanded::after {
+  transform: rotate(270deg);
+}
+
+@media (min-width: 1080px) {
+  .header__logo img {
+    max-width: 240px;
+  }
+
+  .header__burger {
+    display: none;
+  }
+
+  .header__menu {
+    display: flex;
+  }
+
+  .header__menu ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .header__menu ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+  }
+
+  .header__menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    padding: 20px;
+    transition: 0.2s all;
+  }
+
+  .header__menu ul li a:hover {
+    color: #ef4623;
+    transition: 0.2s all;
+  }
+
+  .header__menu ul li.menu-item-has-children:hover > a {
+    color: #ef4623;
+    transition: 0.2s all;
+  }
+
+  .header__menu ul li.menu-item-has-children:hover::after {
+    border-top: 3px solid #ef4623;
+    border-right: 3px solid #ef4623;
+    transition: 0.2s all;
+  }
+
+  .header__menu ul .header__button a {
+    border: 2px solid #ef4623;
+    border-radius: 50px;
+    font-size: 13px;
+    padding: 10px 25px;
+    transition: 0.2s all;
+  }
+
+  .header__menu ul .header__button a:hover {
+    color: #ef4623;
+    transition: 0.2s all;
+  }
+
+  .menu-item-has-children ul.sub-menu {
+    position: absolute;
+    flex-direction: column;
+    top: 55px;
+    left: 0;
+    padding: 20px 0;
+    border-radius: 5px;
+    background-color: #044761;
+    box-shadow: 3px 3px 14px rgba(38, 33, 44, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: top 200ms ease-out;
+    min-width: 10em;
+  }
+
+  .menu-item-has-children ul.sub-menu li {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .menu-item-has-children ul.sub-menu li a {
+    padding: 10px 20px;
+  }
+
+  .menu-item-has-children ul.sub-menu::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 50px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #044761;
+  }
+
+  .menu-item-has-children:hover > ul.sub-menu {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .menu-item-has-children::after {
+    content: "";
+    position: absolute;
+    right: 5px;
+    width: 6px;
+    height: 6px;
+    border-top: 3px solid #FEFEFF;
+    border-right: 3px solid #FEFEFF;
+    border-radius: 2px;
+    transform: rotate(-225deg);
+    transition: 0.2s all;
+  }
 }
 
 .hero {
@@ -476,28 +661,24 @@ template {
   justify-content: center;
 }
 
-.hero__heading {
-  position: absolute;
-  font-size: 60px;
-  color: #FFFFFF;
-  font-weight: 200;
-  font-family: "Montserrat", sans-serif;
-  max-width: 60%;
-}
-
-.hero p:first-of-type {
-  position: absolute;
-}
-
-.hero .wp-block-video {
+.hero__video {
+  position: relative;
   max-height: 650px;
   width: 100%;
   overflow: hidden;
   margin: 0;
+  display: none;
 }
 
-.hero .wp-block-video video {
-  width: 100%;
+.hero__video video {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .hero__opacity {
@@ -506,29 +687,7 @@ template {
   height: 100%;
   background: #032633;
   opacity: 0.8;
-}
-
-.hero .agiledrop-opacity {
-  background-color: #032633;
-  z-index: 1;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  -webkit-filter: opacity(0.6);
-          filter: opacity(0.6);
-}
-
-.hero .container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 20%;
-  margin: 0 auto;
-}
-
-.hero__video {
-  width: 100%;
-  height: 100%;
+  z-index: 2;
 }
 
 .hero__image {
@@ -541,25 +700,95 @@ template {
   height: 100%;
 }
 
-.hero-text {
-  position: relative;
-  max-width: 70%;
+.hero__text {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  padding-top: 100px;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
   z-index: 2;
-  color: #fff;
-}
-
-.hero-text h1 {
-  font-size: 4rem;
+  color: #FEFEFF;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  justify-content: space-between;
   margin: 0 auto;
-  font-weight: 200;
-  line-height: 1.1;
+  max-width: 1200px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
-.hero-text hr {
+.hero__heading {
+  position: relative;
+  margin: 0 0 47px;
+  padding-bottom: 40px;
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.hero__heading::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 5px;
   width: 115px;
   background-color: #ef4623;
-  margin: 0;
+}
+
+.hero__description {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+@media (min-width: 350px) {
+  .hero__heading {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 420px) {
+  .hero__heading {
+    font-size: 50px;
+  }
+
+  .hero__video {
+    display: block;
+    height: 76vh;
+  }
+}
+
+@media (min-width: 1000px) {
+  .hero__heading,
+  .hero__description {
+    max-width: 70%;
+  }
+
+  .hero__video {
+    height: 65vw;
+    max-height: 750px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero__heading {
+    font-size: 60px;
+  }
+
+  .hero__video {
+    height: 45vw;
+    max-height: 820px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero__heading {
+    font-size: 70px;
+  }
 }
 
 .agiledrop-row {
@@ -578,7 +807,6 @@ template {
   padding-right: 1.5625rem;
   position: relative;
   margin: 0 auto;
-  width: 100%;
   max-width: 1200px;
 }
 
