@@ -21,7 +21,8 @@ require get_template_directory() . '/inc/theme-support.php';
 /**
  * Register and Enqueue Styles and Scripts.
  */
-require get_template_directory() . '/inc/enqueues.php';
+require get_template_directory() . '/inc/class-agiledrop-enqueues.php';
+new Agiledrop_Enqueues();
 
 /**
  * Implements site logo.
