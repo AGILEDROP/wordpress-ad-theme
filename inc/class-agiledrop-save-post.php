@@ -21,6 +21,9 @@ if ( ! class_exists( 'Agiledrop_Save_Post' ) ) {
 							if ( $this->validate_video( $_POST['video_URL'] ) ) {
 								update_post_meta( $_POST['ID'], 'featured_video', $_POST['video_URL'] );
 							}
+							else {
+								update_post_meta( $_POST['ID'], 'featured_video', false);
+							}
 						}
 					}
 				}

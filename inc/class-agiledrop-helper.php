@@ -44,12 +44,12 @@ if ( !class_exists( 'Agiledrop_helper' ) ) {
 			if ( ! empty( $video[0] ) ) {
 				return '<video autoplay muted loop id="myVideo">
   							<source src="' . $video[0] .  '" type="video/mp4">
-						</video>';
+						</video>
+						<img src=' . $image . '>';
 			}
-			if ( ! empty( $image[0] ) ) {
-				return '<img src=' . $image . '>';
-			}
-			return false;
+
+			return '<img src=' . $image . '>';
+
 		}
 
 		public function verify_nonce( $action, $field ){
