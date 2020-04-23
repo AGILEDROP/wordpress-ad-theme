@@ -94,7 +94,7 @@ if ( !class_exists( 'Agiledrop_CPT' ) ) {
             }
 			?>
             <label for="video_URL">Upload a video</label>
-            <input id="video_URL" type="text" size="24" name="video_URL" value="'<?php echo $value[0]; ?>'"/>
+            <input id="video_URL" type="text" size="24" name="video_URL" value="<?php echo $value[0]; ?>" placeholder="Insert video url"/>
             <input id="upload_video_button" class="button" type="button" value="Upload" />
             <p>If there is no video, we set featured image as background</p>
 			<?php
