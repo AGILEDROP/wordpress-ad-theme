@@ -410,6 +410,7 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
+  line-height: 1.15;
 }
 
 .header {
@@ -696,6 +697,13 @@ h6 {
   min-height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.hero__video img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .hero__opacity {
