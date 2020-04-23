@@ -30,3 +30,11 @@ a:active {
 	text-decoration: underline;
 	color: $color-red-light;
 }
+
+.container {
+	padding-left: 1.5625rem;
+	padding-right: 1.5625rem;
+	position: relative;
+	margin: 0 auto;
+	max-width: 1200px;
+}
