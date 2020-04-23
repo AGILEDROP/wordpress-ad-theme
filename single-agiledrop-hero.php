@@ -12,16 +12,10 @@ get_header();
 
 <?php
 	global $post;
-	//echo $post->post_name;
-	//var_dump($post);
-
 	$hero_video = get_post_meta( $post->ID, 'featured_video');
 	$hero_image = get_the_post_thumbnail_url( $post->ID );
 	$hero_title = $post->post_title;
 	$hero_excerpt = $post->post_excerpt;
-
-	//$helper = new Agiledrop_Helper();
-	//$hero = $helper->page_has_post( 'agiledrop-hero' );
 ?>
 
 <div class="hero">
