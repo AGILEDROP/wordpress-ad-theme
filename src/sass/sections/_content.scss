@@ -1,14 +1,36 @@
+.content-area {
+	margin-top: 60px;
+
+	h2 {
+		position: relative;
+		margin-bottom: 15px;
+		padding-bottom: 30px;
+		color: #032633;
+
+		&::after {
+			position: absolute;
+			content: "";
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 5px;
+			width: 115px;
+			background-color: #FF9F09;
+		}
+	}
+}
+
 .agiledrop-row {
-  padding: 60px 0 30px 0;
-  align-items: center;
+	padding: 60px 0 30px 0;
+	align-items: center;
 }
 
 .agiledrop-column {
-  hr {
-    height: 3px;
-    width: 50px;
-    background-color: #ef4623
-  }
+	hr {
+		height: 3px;
+		width: 50px;
+		background-color: #ef4623
+	}
 }
 
 .container {
