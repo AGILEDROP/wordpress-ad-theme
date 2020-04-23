@@ -112,6 +112,17 @@ function agiledrop_register_required_plugins() {
 			'external_url'       => '',
 			'is_callable'        => '',
 		),
+		array(
+			'name'               => 'Agiledrop Two Columns',
+			'slug'               => 'agiledrop-two-columns',
+			'source'             => get_template_directory() . '/plugins/agiledrop-two-columns.zip',
+			'required'           => true,
+			'version'            => '',
+			'force_activation'   => true,
+			'force_deactivation' => true,
+			'external_url'       => '',
+			'is_callable'        => '',
+		),
 	);
 
 	$config = array(
