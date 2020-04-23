@@ -22,12 +22,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 This theme uses CSS BEM (Block Element Modifier) methodology.
 */
 
-@import "mixins";
-@import "colors";
-@import "normalize";
-@import "body";
+@import "common/normalize";
+@import "common/mixins";
+@import "common/vars";
+@import "common/body";
 
 @import "sections/header";
 @import "sections/hero";
 @import "sections/content";
 @import "sections/footer";
+@import "sections/error404";

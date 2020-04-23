@@ -7,6 +7,13 @@
 	padding: 20px 0;
 }
 
+.error404 {
+	.header {
+		position: relative;
+		background: $color-green;
+	}
+}
+
 .header__container {
 	position: relative;
 	display: flex;
@@ -43,7 +50,7 @@
 		display: block;
 		height: 2px;
 		margin: 5px 0;
-		background-color: #FEFEFF;
+		background-color: $color-white-gray;
 		transition: 0.2s ease-in-out;
 	}
 }
@@ -89,7 +96,7 @@
 			a {
 				display: block;
 				text-decoration: none;
-				color: $color__menu-link;
+				color: $color-white;
 				font-size: 20px;
 				font-family: "Montserrat", sans-serif;
 				font-weight: 500;
@@ -98,7 +105,7 @@
 			}
 
 			a:hover {
-				color: $color__menu-border;
+				color: $color-red;
 				transition: 0.2s all;
 			}
 		}
@@ -166,7 +173,7 @@
 				a {
 					display: block;
 					text-decoration: none;
-					color: $color__menu-link;
+					color: $color-white;
 					font-size: 15px;
 					font-family: "Montserrat", sans-serif;
 					font-weight: 500;
@@ -175,25 +182,25 @@
 				}
 
 				a:hover {
-					color: $color__menu-border;
+					color: $color-red;
 					transition: 0.2s all;
 				}
 			}
 
 			li.menu-item-has-children:hover > a {
-				color: $color__menu-border;
+				color: $color-red;
 				transition: 0.2s all;
 			}
 
 			li.menu-item-has-children:hover::after {
-				border-top: 3px solid $color__menu-border;
-				border-right: 3px solid $color__menu-border;
+				border-top: 3px solid $color-red;
+				border-right: 3px solid $color-red;
 				transition: 0.2s all;
 			}
 
 			.header__button {
 				a {
-					border: 2px solid $color__menu-border;
+					border: 2px solid $color-red;
 					border-radius: 50px;
 					font-size: 13px;
 					padding: 10px 25px;
@@ -201,7 +208,7 @@
 				}
 
 				a:hover {
-					color: $color__menu-border;
+					color: $color-red;
 					transition: 0.2s all;
 				}
 			}
@@ -215,8 +222,8 @@
 		    left: 0;
 		    padding: 20px 0;
 		    border-radius: 5px;
-		    background-color: #044761;
-		    box-shadow: 3px 3px 14px rgba(38,33,44,0.5);
+		    background-color: $color-green-light;
+		    box-shadow: 3px 3px 14px rgba(38, 33, 44, 0.5);
 		    visibility: hidden;
 		    opacity: 0;
 		    transition: top 200ms ease-out;
@@ -244,7 +251,7 @@
 		    height: 0;
 		    border-left: 10px solid transparent;
 		    border-right: 10px solid transparent;
-		    border-bottom: 10px solid #044761;
+		    border-bottom: 10px solid $color-green-light;
 		}
 
 		&:hover > ul.sub-menu {
@@ -258,8 +265,8 @@
 			right: 5px;
 			width: 6px;
 			height: 6px;
-			border-top: 3px solid #FEFEFF;
-			border-right: 3px solid #FEFEFF;
+			border-top: 3px solid $color-white-gray;
+			border-right: 3px solid $color-white-gray;
 			border-radius: 2px;
 			-ms-transform: rotate(-225deg);
 			transform: rotate(-225deg);

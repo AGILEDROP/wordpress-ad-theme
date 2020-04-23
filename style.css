@@ -413,6 +413,26 @@ h6 {
   line-height: 1.15;
 }
 
+a:link {
+  text-decoration: underline;
+  color: #ff7154;
+}
+
+a:visited {
+  text-decoration: underline;
+  color: #ff7154;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #ff7154;
+}
+
+a:active {
+  text-decoration: underline;
+  color: #ff7154;
+}
+
 .header {
   position: absolute;
   display: flex;
@@ -420,6 +440,11 @@ h6 {
   z-index: 10;
   border-bottom: 1px solid rgba(254, 254, 255, 0.2);
   padding: 20px 0;
+}
+
+.error404 .header {
+  position: relative;
+  background: #032633;
 }
 
 .header__container {
@@ -507,7 +532,7 @@ h6 {
 .header__responsive ul li a {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: #FFFFFF;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
@@ -577,7 +602,7 @@ h6 {
   .header__menu ul li a {
     display: block;
     text-decoration: none;
-    color: #fff;
+    color: #FFFFFF;
     font-size: 15px;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -994,5 +1019,75 @@ h6 {
   .footer__inner {
     flex-direction: row;
   }
+}
+
+.error404 .content-area {
+  margin: 60px 0;
+}
+
+.error404 .page-title {
+  position: relative;
+  margin-bottom: 15px;
+  padding-bottom: 30px;
+  color: #032633;
+}
+
+.error404 .page-title::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  width: 115px;
+  background-color: #FF9F09;
+}
+
+.error404 h2 {
+  padding: 0;
+}
+
+.error404 h2::after {
+  content: none;
+}
+
+.error404 fieldset {
+  border: 0;
+  padding: 0;
+  margin: 50px 0;
+}
+
+.error404 fieldset input[type=text] {
+  height: 38px;
+  padding: 8px 14px;
+  line-height: 1.5;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+}
+
+.error404 fieldset input[type=submit] {
+  background: #ef4623;
+  color: #FFFFFF;
+  height: 38px;
+  padding: 8px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid #ef4623;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.error404 fieldset input[type=submit]:hover {
+  background: #d0300f;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.error404 .widgets {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 

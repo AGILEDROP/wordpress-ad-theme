@@ -1,0 +1,71 @@
+.error404 {
+	.content-area {
+		margin: 60px 0;
+	}
+
+	.page-title {
+		position: relative;
+		margin-bottom: 15px;
+		padding-bottom: 30px;
+		color: $color-green;
+
+		&::after {
+			position: absolute;
+			content: "";
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 5px;
+			width: 115px;
+			background-color: $color-orange;
+		}
+	}
+
+	h2 {
+		padding: 0;
+
+		&::after {
+			content: none;
+		}
+	}
+
+	fieldset {
+		border: 0;
+		padding: 0;
+		margin: 50px 0;
+
+		input[type="text"] {
+			height: 38px;
+			padding: 8px 14px;
+			line-height: 1.5;
+			border: 1px solid $color-silver;
+			box-sizing: border-box;
+		}
+
+		input[type="submit"] {
+			background: $color-red;
+			color: $color-white;
+			height: 38px;
+			padding: 8px 14px;
+			font-size: 14px;
+			line-height: 1.5;
+			border: 1px solid $color-red;
+			cursor: pointer;
+			box-sizing: border-box;
+			transition: all 0.2s;
+		}
+
+		input[type="submit"]:hover {
+			background: darken($color-red, 10%); //#d83e19;
+			cursor: pointer;
+			transition: all 0.2s;
+		}
+	}
+
+	.widgets {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+}
