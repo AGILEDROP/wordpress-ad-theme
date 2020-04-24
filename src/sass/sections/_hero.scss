@@ -11,7 +11,8 @@
 	width: 100%;
 	overflow: hidden;
 	margin: 0;
-	display: none;
+	display: block;
+	height: 76vh;
 
 	video {
 		position: absolute;
@@ -21,6 +22,7 @@
 		min-width: 100%;
 		min-height: 100%;
 		object-fit: contain;
+		display: none;
 	}
 
 	img {
@@ -37,16 +39,6 @@
 	background: $color-green;
 	opacity: 0.8;
 	z-index: 2;
-}
-
-.hero__image {
-	width: 100%;
-	height: 100%;
-
-	img {
-		width: 100%;
-		height: 100%;
-	}
 }
 
 .hero__text {
@@ -95,6 +87,30 @@
 	line-height: 1.5;
 }
 
+.hero__subpage {
+	.hero__heading {
+		font-size: 32px;
+		margin: 0 0 22px;
+		padding-bottom: 25px;
+	}
+
+	.hero__image {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		margin: 0;
+		display: block;
+		height: 100vw;
+		max-height: 270px;
+
+		img {
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+
 @include breakpoint(350px) {
 	.hero__heading {
 		font-size: 40px;
@@ -107,8 +123,24 @@
 	}
 
 	.hero__video {
-		display: block;
-		height: 76vh;
+		video {
+			display: block;
+		}
+	}
+}
+
+@include breakpoint(768px) {
+	.hero__subpage {
+		.hero__heading {
+			font-size: 42px;
+			margin: 0 0 30px;
+			padding-bottom: 35px;
+		}
+
+		.hero__image {
+			height: 45vw;
+			max-height: 450px;
+		}
 	}
 }
 
@@ -125,8 +157,10 @@
 }
 
 @include breakpoint(1200px) {
-	.hero__heading {
-		font-size: 60px;
+	.hero {
+		.hero__heading {
+			font-size: 60px;
+		}
 	}
 
 	.hero__video {
