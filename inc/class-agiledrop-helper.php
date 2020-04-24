@@ -32,7 +32,7 @@ if ( !class_exists( 'Agiledrop_helper' ) ) {
 				if ( !empty($selected_page) ) {
 					if ( get_the_ID() == $selected_page[0] ) {
 						$video_src = get_post_meta( $post->ID, 'featured_video');
-						$image_url = get_the_post_thumbnail_url( $post->ID );
+						$image_url = get_the_post_thumbnail_url( $post->ID, 'full' );
 						return array( 'title' => $post->post_title, 'content' => $post->post_excerpt, 'background' => $this->select_background( $image_url, $video_src ) );
 					}
 				}
