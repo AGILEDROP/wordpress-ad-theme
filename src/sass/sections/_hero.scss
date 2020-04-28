@@ -5,7 +5,7 @@
 	justify-content: center;
 }
 
-.hero__video {
+.hero__background {
 	position: relative;
 	max-height: 650px;
 	width: 100%;
@@ -94,7 +94,7 @@
 		padding-bottom: 25px;
 	}
 
-	.hero__image {
+	.hero__background {
 		position: relative;
 		width: 100%;
 		overflow: hidden;
@@ -122,7 +122,7 @@
 		font-size: 50px;
 	}
 
-	.hero__video {
+	.hero__background {
 		video {
 			display: block;
 		}
@@ -137,7 +137,7 @@
 			padding-bottom: 35px;
 		}
 
-		.hero__image {
+		.hero__background {
 			height: 45vw;
 			max-height: 450px;
 		}
@@ -150,7 +150,7 @@
 		max-width: 70%;
 	}
 
-	.hero__video {
+	.hero__background {
 		height: 65vw;
 		max-height: 750px;
 	}
@@ -163,7 +163,7 @@
 		}
 	}
 
-	.hero__video {
+	.hero__background {
 		height: 45vw;
 		max-height: 820px;
 	}

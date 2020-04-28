@@ -755,7 +755,7 @@ a:active {
   justify-content: center;
 }
 
-.hero__video {
+.hero__background {
   position: relative;
   max-height: 650px;
   width: 100%;
@@ -765,7 +765,7 @@ a:active {
   height: 76vh;
 }
 
-.hero__video video {
+.hero__background video {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -777,7 +777,7 @@ a:active {
   display: none;
 }
 
-.hero__video img {
+.hero__background img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
@@ -844,7 +844,7 @@ a:active {
   padding-bottom: 25px;
 }
 
-.hero__subpage .hero__image {
+.hero__subpage .hero__background {
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -854,7 +854,7 @@ a:active {
   max-height: 270px;
 }
 
-.hero__subpage .hero__image img {
+.hero__subpage .hero__background img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
@@ -872,7 +872,7 @@ a:active {
     font-size: 50px;
   }
 
-  .hero__video video {
+  .hero__background video {
     display: block;
   }
 }
@@ -884,7 +884,7 @@ a:active {
     padding-bottom: 35px;
   }
 
-  .hero__subpage .hero__image {
+  .hero__subpage .hero__background {
     height: 45vw;
     max-height: 450px;
   }
@@ -896,7 +896,7 @@ a:active {
     max-width: 70%;
   }
 
-  .hero__video {
+  .hero__background {
     height: 65vw;
     max-height: 750px;
   }
@@ -907,7 +907,7 @@ a:active {
     font-size: 60px;
   }
 
-  .hero__video {
+  .hero__background {
     height: 45vw;
     max-height: 820px;
   }
