@@ -898,6 +898,22 @@ a:active {
   background-color: #FF9F09;
 }
 
+.wp-block-group {
+  padding: 60px 0;
+}
+
+.wp-block-group__inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1.5625rem;
+  padding-right: 1.5625rem;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 .twocolumns {
   padding: 60px 0;
 }
