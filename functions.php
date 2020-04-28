@@ -83,65 +83,13 @@ add_action( 'widgets_init', 'agiledrop_load_widget' );
 require get_template_directory() . '/inc/class-agiledrop-widget-area.php';
 new Agiledrop_Widget_Area();
 
-
-require_once get_template_directory() . '/class-tgm-plugin-activation.php';
-
-add_action( 'tgmpa_register', 'agiledrop_register_required_plugins' );
-
-function agiledrop_register_required_plugins() {
-	$plugins = array(
-		array(
-			'name'               => 'Agiledrop Blocks',
-			'slug'               => 'agiledrop-blocks',
-			'source'             => get_template_directory() . '/plugins/agiledrop-blocks.zip',
-			'required'           => true,
-			'version'            => '',
-			'force_activation'   => true,
-			'force_deactivation' => true,
-			'external_url'       => '',
-			'is_callable'        => '',
-		),
-		array(
-			'name'               => 'Agiledrop Form',
-			'slug'               => 'agiledrop-form',
-			'source'             => get_template_directory() . '/plugins/agiledrop-form.zip',
-			'required'           => true,
-			'version'            => '',
-			'force_activation'   => true,
-			'force_deactivation' => true,
-			'external_url'       => '',
-			'is_callable'        => '',
-		),
-		array(
-			'name'               => 'Agiledrop Two Columns',
-			'slug'               => 'agiledrop-two-columns',
-			'source'             => get_template_directory() . '/plugins/agiledrop-two-columns.zip',
-			'required'           => true,
-			'version'            => '',
-			'force_activation'   => true,
-			'force_deactivation' => true,
-			'external_url'       => '',
-			'is_callable'        => '',
-		),
-	);
-
-	$config = array(
-		'id'           => 'agiledrop',
-		'default_path' => '',
-		'menu'         => 'agiledrop-install-plugins',
-		'parent_slug'  => 'themes.php',
-		'capability'   => 'edit_theme_options',
-		'has_notices'  => true,
-		'dismissable'  => true,
-		'dismiss_msg'  => '',
-		'is_automatic' => false,
-		'message'      => '',
-	);
-
-	tgmpa( $plugins, $config );
-}
-
 /**
  * Enable SVG media.
  */
 require get_template_directory() . '/inc/svg.php';
+
+require get_template_directory() . '/blocks/agiledrop-blocks.php';
+
+require get_template_directory() . '/inc/class-agiledrop-form.php';
+new Agiledrop_Form();
+
