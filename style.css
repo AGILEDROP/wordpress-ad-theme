@@ -960,10 +960,6 @@ a:active {
   }
 }
 
-.content-area {
-  margin-top: 60px;
-}
-
 .wp-block-group {
   padding: 60px 0;
 }
@@ -983,13 +979,15 @@ a:active {
   padding: 5px 15px;
   font-size: 13px;
   text-transform: uppercase;
+  text-decoration: none;
   font-weight: 700;
   transition: all 0.2s;
 }
 
 .is-style-outline .wp-block-button__link:hover,
 .is-style-outline .wp-block-button__link:focus {
-  background: #ef4623;
+  background: #d0300f !important;
+  border: 2px solid #d0300f;
   color: #FFFFFF;
   transition: all 0.2s;
 }
@@ -1001,13 +999,15 @@ a:active {
   padding: 15px 35px;
   font-size: 16px;
   text-transform: uppercase;
+  text-decoration: none;
   font-weight: 400;
   transition: all 0.2s;
+  border: 0;
 }
 
 .is-style-fill .wp-block-button__link:hover,
 .is-style-fill .wp-block-button__link:focus {
-  background: #ef4623;
+  background: #d0300f !important;
   color: #FFFFFF;
   transition: all 0.2s;
 }
@@ -1041,6 +1041,10 @@ a:active {
   padding-right: 8%;
 }
 
+.cards h3 {
+  font-size: 18px;
+}
+
 .cards .wp-block-column {
   background: #FEFEFF;
   border: 1px solid #d4dbde;
@@ -1050,7 +1054,7 @@ a:active {
 }
 
 .cards .wp-block-image img {
-  height: 100px;
+  height: auto;
 }
 
 .cards .wp-block-button__link {
@@ -1059,6 +1063,42 @@ a:active {
   font-weight: 400;
   text-transform: uppercase;
   text-decoration: none;
+  transition: all 0.2s;
+}
+
+.cards .wp-block-button__link:hover,
+.cards .wp-block-button__link:focus {
+  background: #d0300f !important;
+  color: #FFFFFF;
+  transition: all 0.2s;
+}
+
+.cards-100 .wp-block-image img {
+  height: 100px;
+}
+
+.cards-60 .wp-block-image img {
+  height: 60px;
+}
+
+.cards__quotes .wp-block-column {
+  position: relative;
+}
+
+.cards__quotes .wp-block-column::before {
+  position: absolute;
+  background: #1f2122;
+  background-image: url(/wp-content/themes/wordpress-ad-theme/images/quotes.svg);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center center;
+  content: "";
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .form {
@@ -1246,6 +1286,17 @@ a:active {
   background-color: #d4dbde;
 }
 
+.footer h4 {
+  color: #FFFFFF;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer h4::after {
+  content: none;
+}
+
 .footer__top {
   background-color: #032633;
   color: #d4dbde;
@@ -1285,6 +1336,10 @@ a:active {
   display: flex;
   width: 100%;
   flex-direction: column;
+}
+
+.footer__inner-left p {
+  margin-top: 0;
 }
 
 .footer__inner-right .footer__inner-socials {
