@@ -15,26 +15,21 @@
         <div class="footer__container container">
 
             <div class="footer__left">
-            	<?php
-                if ( is_active_sidebar( 'top-left-footer' ) ) {
-	                dynamic_sidebar( 'top-left-footer' );
-                }
-                ?>
                 <div class="footer__inner">
 	                <div class="footer__inner-left">
 		                <?php
-		                if ( is_active_sidebar( 'top-left-left-footer' ) ) {
-			                dynamic_sidebar( 'top-left-left-footer' );
+		                if ( is_active_sidebar( 'left-first-footer' ) ) {
+			                dynamic_sidebar( 'left-first-footer' );
 		                }
 		                ?>
 	                </div>
 	                <div class="footer__inner-right">
 		                <?php
-		                if ( is_active_sidebar( 'top-left-right-footer' ) ) {
-			                dynamic_sidebar( 'top-left-right-footer' );
+		                if ( is_active_sidebar( 'left-second-footer' ) ) {
+			                dynamic_sidebar( 'left-second-footer' );
 		                }
-		                if ( is_active_sidebar( 'top-left-right-socials' ) ) { ?>
-			                <div class="footer__inner-socials"><?php dynamic_sidebar( 'top-left-right-socials' ); ?></div>
+		                if ( is_active_sidebar( 'footer-social' ) ) { ?>
+			                <div class="footer__inner-socials"><?php dynamic_sidebar( 'footer-social' ); ?></div>
 		                <?php } ?>
 	                </div>
 	            </div>
@@ -42,8 +37,8 @@
             </div>
             <div class="footer__right">
 	            <?php
-	            if ( is_active_sidebar( 'top-right-footer' ) ) {
-		            dynamic_sidebar( 'top-right-footer' );
+	            if ( is_active_sidebar( 'right-footer' ) ) {
+		            dynamic_sidebar( 'right-footer' );
 	            }
 	            ?>
             </div>
