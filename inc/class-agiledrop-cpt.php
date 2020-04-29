@@ -85,7 +85,7 @@ if ( !class_exists( 'Agiledrop_CPT' ) ) {
 
 		public function upload_video() {
 			wp_nonce_field( 'agiledrop_save', 'featured_video_nonce' );
-			$value = 'Upload Video';
+			$value = array( 0 => 'Upload Video' );
 			if ( isset( $_GET['post'] ) ) {
 				$value = get_post_meta( $_GET['post'], 'featured_video' );
 				if ( empty( $value ) ) {
