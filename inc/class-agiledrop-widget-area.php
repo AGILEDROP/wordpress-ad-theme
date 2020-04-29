@@ -37,7 +37,7 @@ if ( ! class_exists('Agiledrop_Widget_Area' ) ) {
 			) );
 			register_sidebar( array(
 				'name'          => __( 'Footer Right', 'agiledrop' ),
-				'id'            => 'top-right-footer',
+				'id'            => 'right-footer',
 				'description'   => __( 'Add widgets here to appear in right column of the footer.', 'agiledrop' ),
 				'before_widget' =>  '',
 				'after_widget'  => '',
