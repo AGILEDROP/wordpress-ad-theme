@@ -116,3 +116,139 @@
 		text-decoration: none;
 	}
 }
+
+.form {
+	display: flex;
+	flex-direction: column;
+
+	.form__group {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 20px;
+	}
+
+	.form__required::after {
+		content: ' *';
+		color: $color-red;
+	}
+
+	.form__input,
+	.form__select,
+	.form__textarea {
+		padding: 10px;
+		border: 2px solid $color-gray;
+		border-radius: 5px;
+		margin-top: 10px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background-color: $color-white;
+	}
+
+	.form__error {
+		display: none;
+	}
+
+	.form__button {
+		align-self: flex-end;
+		background: $color-red;
+		border: 0;
+		color: $color-white;
+		padding: 15px 35px;
+		font-size: 13px;
+		text-transform: uppercase;
+		font-weight: 400;
+		transition: all 0.2s;
+		border-radius: 50px;
+		cursor: pointer;
+	}
+
+	.form__button:hover {
+		background: darken($color-red, 10%);
+	}
+}
+
+// checkbox & radio styling
+.form__checkbox,
+.form__radio {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.form__checkbox input,
+.form__radio input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.form__checkbox .checkmark,
+.form__radio .checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	background-color: $color-white;
+	border: 2px solid $color-gray;
+}
+
+.form__checkbox .checkmark {
+	border-radius: 5px;
+}
+
+.form__radio .checkmark {
+	border-radius: 50%;
+}
+
+.form__checkbox:hover input ~ .checkmark,
+.form__radio:hover input ~ .checkmark {
+	background-color: $color-gray;
+}
+
+.form__checkbox input:checked ~ .checkmark,
+.form__radio input:checked ~ .checkmark {
+	background-color: $color-gray;
+}
+
+.form__checkbox .checkmark:after,
+.form__radio .checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+.form__checkbox input:checked ~ .checkmark:after,
+.form__radio input:checked ~ .checkmark:after {
+	display: block;
+}
+
+.form__checkbox .checkmark:after {
+	left: 6px;
+	top: 2px;
+	width: 5px;
+	height: 10px;
+	border: solid $color-green;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.form__radio .checkmark:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $color-green;
+}

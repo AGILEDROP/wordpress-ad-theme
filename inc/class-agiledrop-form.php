@@ -28,34 +28,60 @@ if ( ! class_exists( 'Agiledrop_Form' ) ) {
 
 		public function contact_form( ) {
 			ob_start();?>
-			<form id="agiledrop-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
-				<div class="form-group">
-					<label for="name">Name</label>
-					<input type="text" class="form-control" placeholder="Your Name" id="name" name="name" required>
-					<p id="name-error"></p>
+			<form class="form" id="agiledrop-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+				<div class="form__group">
+					<label class="form__required" for="name">Ime in Priimek</label>
+					<input type="text" class="form__input" id="name" name="name" required>
+					<p id="name-error" class="form__error"></p>
 				</div>
-				<div class="form-group">
-					<label for="company">Company</label>
-					<input type="text" class="form-control" placeholder="Your company" id="company" name="company" required>
-					<p id="company-error"></p>
+				<div class="form__group">
+					<label class="form__required" for="email">E-naslov</label>
+					<input type="email" class="form__input" id="email" name="email" required >
+					<p id="email-error" class="form__error"></p>
 				</div>
-				<div class="form-group">
-					<label for="subject">Subject</label>
-					<input type="text" class="form-control" placeholder="Subject" id="subject" name="subject" required>
-					<p id="subject-error"></p>
+				<div class="form__group">
+					<label class="form__required" for="email">Lokacija</label>
+					<select class="form__select" id="cars" name="cars" required>
+						<option value selected="selected">- Select -</option>
+						<option value="MB">Maribor</option>
+						<option value="LJ">Ljubljana</option>
+						<option value="NM">Novo Mesto</option>
+						<option value="CE">Celje</option>
+					</select>
+					<p id="email-error" class="form__error"></p>
 				</div>
-				<div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" class="form-control" placeholder="Your email" id="email" name="email" required >
-					<p id="email-error"></p>
+				<div class="form__group">
+					<strong>Status</strong><br>
+					<label class="form__radio" for="zaposlen">
+						<input type="radio" id="zaposlen" name="status" value="zaposlen">
+						Zaposlen
+						<span class="checkmark"></span>
+					</label>
+					<label class="form__radio" for="brezposeln">
+						<input type="radio" id="brezposeln" name="status" value="brezposeln">
+						Brezposeln
+						<span class="checkmark"></span>
+					</label>
+					<label class="form__radio" for="student">
+						<input type="radio" id="student" name="status" value="student">
+						Študent
+						<span class="checkmark"></span>
+					</label>
 				</div>
-				<div class="form-group">
-					<label for="message">Message</label>
-					<textarea class="form-control" placeholder="Your message" id="message" name="message" required></textarea>
-					<p id="message-error"></p>
+				<div class="form__group">
+					<label class="form__checkbox" for="zaposlitev">
+						Zanima me zaposlitev v podjetju Agiledrop
+						<input type="checkbox" id="zaposlitev" name="zaposlitev">
+						<span class="checkmark"></span>
+					</label>
+					<label class="form__checkbox form__required" for="obdelava-podatkov">
+						Strinjam se z obdelavo podatkov
+						<input type="checkbox" id="obdelava-podatkov" name="obdelava-podatkov">
+						<span class="checkmark"></span>
+					</label>
 				</div>
 				<p id="form-status"></p>
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="form__button">Pošlji</button>
 			</form>
 			<?php
 			return ob_get_clean();
