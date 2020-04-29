@@ -6,11 +6,9 @@
 
 <div class="<?php if (is_front_page()) { echo 'hero'; } else { echo 'hero hero__subpage'; } ?>">
 	<div class="hero__opacity"></div>
-	<div class="hero__background">
-		<figure class="<?php if (is_front_page()) { echo 'hero__video'; } else { echo 'hero__image'; } ?>">
+		<figure class="hero__background">
 			<?php if ( !empty( $hero['background'] ) ) echo $hero['background']; ?>
 		</figure>
-	</div>
 	<div class="hero__text">
 		<div class="hero__container">
 			<h1 class="hero__heading"><?php if ( !empty( $hero['title'] ) ) echo $hero['title']; ?></h1>

@@ -33,7 +33,9 @@
 		                if ( is_active_sidebar( 'top-left-right-footer' ) ) {
 			                dynamic_sidebar( 'top-left-right-footer' );
 		                }
-		                ?>
+		                if ( is_active_sidebar( 'top-left-right-socials' ) ) { ?>
+			                <div class="footer__inner-socials"><?php dynamic_sidebar( 'top-left-right-socials' ); ?></div>
+		                <?php } ?>
 	                </div>
 	            </div>
 

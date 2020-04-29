@@ -11,6 +11,50 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.15;
 }
 
+h2 {
+	position: relative;
+	margin-bottom: 15px;
+	padding-bottom: 30px;
+	color: $color-green;
+	font-size: 24px;
+
+	&::after {
+		position: absolute;
+		content: "";
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 5px;
+		width: 115px;
+		background-color: $color-orange;
+	}
+}
+
+h3 {
+	position: relative;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	color: $color-green;
+	font-size: 24px;
+
+	&::after {
+		position: absolute;
+		content: "";
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		width: 50px;
+		background-color: $color-red;
+	}
+}
+
+.has-text-align-center {
+	&::after {
+		margin: 0 auto;
+	}
+}
+
 a:link {
 	text-decoration: underline;
 	color: $color-red-light;

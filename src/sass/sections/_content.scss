@@ -1,58 +1,56 @@
 .content-area {
 	margin-top: 60px;
-
-	h2 {
-		position: relative;
-		margin-bottom: 15px;
-		padding-bottom: 30px;
-		color: $color-green;
-
-		&::after {
-			position: absolute;
-			content: "";
-			bottom: 0;
-			left: 0;
-			right: 0;
-			height: 5px;
-			width: 115px;
-			background-color: $color-orange;
-		}
-	}
 }
 
-.twocolumns {
+.wp-block-group {
 	padding: 60px 0;
-	
-	&__container {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		padding-left: 1.5625rem;
-		padding-right: 1.5625rem;
-		position: relative;
-		margin: 0 auto;
-		max-width: 1200px;
+}
 
-		div {
-			position: relative;
-			width: 45%;
-		}
-	}
+.wp-block-group__inner-container {
+	// display: flex;
+	// flex-direction: row;
+	// justify-content: space-between;
+	// align-items: center;
+	padding-left: 1.5625rem;
+	padding-right: 1.5625rem;
+	position: relative;
+	margin: 0 auto;
+	max-width: 1200px;
+}
 
-	&__image {
-		object-fit: cover;
-		height: 100%;
+.wp-block-button__link {
+	background: $color-white;
+	border: 2px solid $color-red;
+	color: $color-black-light;
+	padding: 5px 15px;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: 700;
+	transition: all 0.2s;
+
+}
+
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+	background: $color-red;
+	color: $color-white;
+	transition: all 0.2s;
+}
+
+.wp-block-column figure {
+	margin: 0;
+}
+
+.wp-block-embed__wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
+		height: 100%;
 	}
-}
-
-.twocolumns__reverse {
-	.twocolumns__container {
-		flex-direction: row-reverse;
-	}
-}
-
-.twocolumns__background {
-	background: $color-gray-light;
 }

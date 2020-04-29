@@ -35,6 +35,7 @@
 		color: $color-white-gray;
 		font-family: "Montserrat", sans-serif;
 		font-weight: 700;
+		font-size: 18px;
 
 		&::after {
 			position: absolute;
@@ -78,14 +79,6 @@
 		display: flex;
 	}
 
-	.copyright__left {
-		display: flex;
-	}
-
-	.copyright__right {
-		display: flex;
-	}
-
 	&__container {
 		display:flex;
 		flex-direction: column;
@@ -99,6 +92,24 @@
 
 	&__right {
 		
+	}
+}
+
+.footer__inner-right {
+	.footer__inner-socials {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 25px 0;
+
+		span {
+			display: none;
+		}
+
+		img {
+			width: auto;
+			height: 20px !important;
+		}
 	}
 }
 
