@@ -451,6 +451,25 @@ h3::after {
   background-color: #ef4623;
 }
 
+h4 {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  color: #032633;
+  font-size: 18px;
+}
+
+h4::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  width: 50px;
+  background-color: #ef4623;
+}
+
 .has-text-align-center::after {
   margin: 0 auto;
 }
@@ -677,6 +696,19 @@ a:active {
     transition: 0.2s all;
   }
 
+  .header__menu ul li.current-menu-item a {
+    color: #FF9F09;
+  }
+
+  .header__menu ul li.current-menu-parent::after {
+    border-top: 3px solid #FF9F09;
+    border-right: 3px solid #FF9F09;
+  }
+
+  .header__menu ul li.current-menu-parent ul.sub-menu li.current-menu-item a {
+    color: #FF9F09;
+  }
+
   .header__menu ul .header__button a {
     border: 2px solid #ef4623;
     border-radius: 50px;
@@ -745,6 +777,7 @@ a:active {
     border-radius: 2px;
     transform: rotate(-225deg);
     transition: 0.2s all;
+    top: calc(50% - 6px);
   }
 }
 
@@ -907,6 +940,10 @@ a:active {
     font-size: 60px;
   }
 
+  .hero__subpage .hero__heading {
+    font-size: 42px;
+  }
+
   .hero__background {
     height: 45vw;
     max-height: 820px;
@@ -916,6 +953,10 @@ a:active {
 @media (min-width: 1600px) {
   .hero__heading {
     font-size: 70px;
+  }
+
+  .hero__subpage .hero__heading {
+    font-size: 42px;
   }
 }
 
@@ -935,7 +976,7 @@ a:active {
   max-width: 1200px;
 }
 
-.wp-block-button__link {
+.is-style-outline .wp-block-button__link {
   background: #FFFFFF;
   border: 2px solid #ef4623;
   color: #1f2122;
@@ -946,8 +987,26 @@ a:active {
   transition: all 0.2s;
 }
 
-.wp-block-button__link:hover,
-.wp-block-button__link:focus {
+.is-style-outline .wp-block-button__link:hover,
+.is-style-outline .wp-block-button__link:focus {
+  background: #ef4623;
+  color: #FFFFFF;
+  transition: all 0.2s;
+}
+
+.is-style-fill .wp-block-button__link {
+  background: #FFFFFF;
+  border: 2px solid #ef4623;
+  color: #1f2122;
+  padding: 15px 35px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: all 0.2s;
+}
+
+.is-style-fill .wp-block-button__link:hover,
+.is-style-fill .wp-block-button__link:focus {
   background: #ef4623;
   color: #FFFFFF;
   transition: all 0.2s;
@@ -970,6 +1029,36 @@ a:active {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+  padding-right: 0;
+  padding-left: 8%;
+}
+
+.has-media-on-the-right .wp-block-media-text__content {
+  padding-left: 0;
+  padding-right: 8%;
+}
+
+.cards .wp-block-column {
+  background: #FEFEFF;
+  border: 1px solid #d4dbde;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0 6px 7px rgba(0, 0, 0, 0.08);
+}
+
+.cards .wp-block-image img {
+  height: 100px;
+}
+
+.cards .wp-block-button__link {
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .footer {
