@@ -451,6 +451,25 @@ h3::after {
   background-color: #ef4623;
 }
 
+h4 {
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  color: #032633;
+  font-size: 18px;
+}
+
+h4::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  width: 50px;
+  background-color: #ef4623;
+}
+
 .has-text-align-center::after {
   margin: 0 auto;
 }
@@ -677,6 +696,19 @@ a:active {
     transition: 0.2s all;
   }
 
+  .header__menu ul li.current-menu-item a {
+    color: #FF9F09;
+  }
+
+  .header__menu ul li.current-menu-parent::after {
+    border-top: 3px solid #FF9F09;
+    border-right: 3px solid #FF9F09;
+  }
+
+  .header__menu ul li.current-menu-parent ul.sub-menu li.current-menu-item a {
+    color: #FF9F09;
+  }
+
   .header__menu ul .header__button a {
     border: 2px solid #ef4623;
     border-radius: 50px;
@@ -745,6 +777,7 @@ a:active {
     border-radius: 2px;
     transform: rotate(-225deg);
     transition: 0.2s all;
+    top: calc(50% - 6px);
   }
 }
 
@@ -907,6 +940,10 @@ a:active {
     font-size: 60px;
   }
 
+  .hero__subpage .hero__heading {
+    font-size: 42px;
+  }
+
   .hero__background {
     height: 45vw;
     max-height: 820px;
@@ -917,10 +954,10 @@ a:active {
   .hero__heading {
     font-size: 70px;
   }
-}
 
-.content-area {
-  margin-top: 60px;
+  .hero__subpage .hero__heading {
+    font-size: 42px;
+  }
 }
 
 .wp-block-group {
@@ -935,20 +972,42 @@ a:active {
   max-width: 1200px;
 }
 
-.wp-block-button__link {
+.is-style-outline .wp-block-button__link {
   background: #FFFFFF;
   border: 2px solid #ef4623;
   color: #1f2122;
   padding: 5px 15px;
   font-size: 13px;
   text-transform: uppercase;
+  text-decoration: none;
   font-weight: 700;
   transition: all 0.2s;
 }
 
-.wp-block-button__link:hover,
-.wp-block-button__link:focus {
-  background: #ef4623;
+.is-style-outline .wp-block-button__link:hover,
+.is-style-outline .wp-block-button__link:focus {
+  background: #d0300f !important;
+  border: 2px solid #d0300f;
+  color: #FFFFFF;
+  transition: all 0.2s;
+}
+
+.is-style-fill .wp-block-button__link {
+  background: #FFFFFF;
+  border: 2px solid #ef4623;
+  color: #1f2122;
+  padding: 15px 35px;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.2s;
+  border: 0;
+}
+
+.is-style-fill .wp-block-button__link:hover,
+.is-style-fill .wp-block-button__link:focus {
+  background: #d0300f !important;
   color: #FFFFFF;
   transition: all 0.2s;
 }
@@ -970,6 +1029,209 @@ a:active {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+  padding-right: 0;
+  padding-left: 8%;
+}
+
+.has-media-on-the-right .wp-block-media-text__content {
+  padding-left: 0;
+  padding-right: 8%;
+}
+
+.cards h3 {
+  font-size: 18px;
+}
+
+.cards .wp-block-column {
+  background: #FEFEFF;
+  border: 1px solid #d4dbde;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0 6px 7px rgba(0, 0, 0, 0.08);
+}
+
+.cards .wp-block-image img {
+  height: auto;
+}
+
+.cards .wp-block-button__link {
+  padding: 5px 15px;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.cards .wp-block-button__link:hover,
+.cards .wp-block-button__link:focus {
+  background: #d0300f !important;
+  color: #FFFFFF;
+  transition: all 0.2s;
+}
+
+.cards-100 .wp-block-image img {
+  height: 100px;
+}
+
+.cards-60 .wp-block-image img {
+  height: 60px;
+}
+
+.cards__quotes .wp-block-column {
+  position: relative;
+}
+
+.cards__quotes .wp-block-column::before {
+  position: absolute;
+  background: #1f2122;
+  background-image: url(/wp-content/themes/wordpress-ad-theme/images/quotes.svg);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center center;
+  content: "";
+  width: 50px;
+  height: 50px;
+  top: 0;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form .form__group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form .form__required::after {
+  content: " *";
+  color: #ef4623;
+}
+
+.form .form__input,
+.form .form__select,
+.form .form__textarea {
+  padding: 10px;
+  border: 2px solid #d4dbde;
+  border-radius: 5px;
+  margin-top: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #FFFFFF;
+}
+
+.form .form__error {
+  display: none;
+}
+
+.form .form__button {
+  align-self: flex-end;
+  background: #ef4623;
+  border: 0;
+  color: #FFFFFF;
+  padding: 15px 35px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: all 0.2s;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.form .form__button:hover {
+  background: #d0300f;
+}
+
+.form__checkbox,
+.form__radio {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.form__checkbox input,
+.form__radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.form__checkbox .checkmark,
+.form__radio .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #FFFFFF;
+  border: 2px solid #d4dbde;
+}
+
+.form__checkbox .checkmark {
+  border-radius: 5px;
+}
+
+.form__radio .checkmark {
+  border-radius: 50%;
+}
+
+.form__checkbox:hover input ~ .checkmark,
+.form__radio:hover input ~ .checkmark {
+  background-color: #d4dbde;
+}
+
+.form__checkbox input:checked ~ .checkmark,
+.form__radio input:checked ~ .checkmark {
+  background-color: #d4dbde;
+}
+
+.form__checkbox .checkmark:after,
+.form__radio .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.form__checkbox input:checked ~ .checkmark:after,
+.form__radio input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.form__checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #032633;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.form__radio .checkmark:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #032633;
 }
 
 .footer {
@@ -1024,6 +1286,17 @@ a:active {
   background-color: #d4dbde;
 }
 
+.footer h4 {
+  color: #FFFFFF;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer h4::after {
+  content: none;
+}
+
 .footer__top {
   background-color: #032633;
   color: #d4dbde;
@@ -1063,6 +1336,10 @@ a:active {
   display: flex;
   width: 100%;
   flex-direction: column;
+}
+
+.footer__inner-left p {
+  margin-top: 0;
 }
 
 .footer__inner-right .footer__inner-socials {

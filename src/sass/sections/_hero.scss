@@ -163,6 +163,12 @@
 		}
 	}
 
+	.hero__subpage {
+		.hero__heading {
+			font-size: 42px;
+		}
+	}
+
 	.hero__background {
 		height: 45vw;
 		max-height: 820px;
@@ -172,5 +178,11 @@
 @include breakpoint(1600px) {
 	.hero__heading {
 		font-size: 70px;
+	}
+
+	.hero__subpage {
+		.hero__heading {
+			font-size: 42px;
+		}
 	}
 }
