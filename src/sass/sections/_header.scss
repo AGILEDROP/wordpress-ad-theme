@@ -126,6 +126,30 @@
 			transition: all .3s ease-in-out;
 		}
 
+		li.current-menu-item {
+			a {
+				color: $color-orange;
+			}
+		}
+
+		li.current-menu-parent {
+			a {
+				color: $color-orange;
+			}
+
+			ul.sub-menu {
+				a {
+					color: $color-white;
+				}
+			}
+
+			ul.sub-menu li.current-menu-item {
+				a {
+					color: $color-orange;
+				}
+			}
+		}
+
 		li.menu-item-has-children.expanded {
 			ul.sub-menu {
 				display: block;
