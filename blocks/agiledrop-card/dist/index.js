@@ -47,19 +47,19 @@
       selectPost: [{}],
       selectedPost: {},
       title: {
-        type: 'string',
-        source: 'parent',
+        type: 'array',
+        source: 'children',
         selector: 'h2'
       },
       description: {
-        type: 'string',
-        source: 'parent',
+        type: 'array',
+        source: 'children',
         selector: 'p'
       },
       image: {
         type: 'string',
         source: 'attribute',
-        selector: 'source',
+        selector: 'img',
         attribute: 'src'
       }
     },

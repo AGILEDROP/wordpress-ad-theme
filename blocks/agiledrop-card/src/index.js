@@ -18,20 +18,20 @@ registerBlockType( 'agiledrop/agiledrop-card', {
 		selectPost:[{}],
 		selectedPost: {},
 		title: {
-			type: 'string',
-			source: 'parent',
+			type: 'array',
+			source: 'children',
 			selector: 'h2',
 		},
 		description: {
-			type: 'string',
-			source: 'parent',
+			type: 'array',
+			source: 'children',
 			selector: 'p',
 		},
 		image:{
 			type: 'string',
 			source: 'attribute',
-			selector: 'source',
-			attribute: 'src'
+			selector: 'img',
+			attribute: 'src',
 		}
 
 	},
@@ -114,9 +114,10 @@ registerBlockType( 'agiledrop/agiledrop-card', {
 						onChange={ onChangePosts }
 					/>
 				</InspectorControls>
-				<img src={ image } />
+				<img src={ image }/>
 				<RichText.Content tagName="h2" value={ title } />
 				<RichText.Content tagName="p" value={ description } />
+
 			</div>
 		);
 	},
@@ -131,9 +132,10 @@ registerBlockType( 'agiledrop/agiledrop-card', {
 
 		return (
 			<div className="agiledrop-card">
-				<img src={ image } />
+				<img src={ image }/>
 				<RichText.Content tagName="h2" value={ title } />
 				<RichText.Content tagName="p" value={ description } />
+
 			</div>
 		);
 	},
