@@ -26,6 +26,8 @@ This theme uses CSS BEM (Block Element Modifier) methodology.
 @import "common/mixins";
 @import "common/vars";
 @import "common/body";
+@import "common/forms";
+@import "common/buttons";
 
 @import "sections/header";
 @import "sections/hero";

@@ -10,52 +10,6 @@
 	max-width: 1200px;
 }
 
-.is-style-outline {
-	.wp-block-button__link {
-		background: $color-white;
-		border: 2px solid $color-red;
-		color: $color-black-light;
-		padding: 5px 15px;
-		font-size: 13px;
-		text-transform: uppercase;
-		text-decoration: none;
-		font-weight: 700;
-		transition: all 0.2s;
-	}
-
-	.wp-block-button__link:hover,
-	.wp-block-button__link:focus {
-		background: darken($color-red, 10%) !important;
-		border: 2px solid darken($color-red, 10%);
-		color: $color-white;
-		transition: all 0.2s;
-	}
-}
-
-.is-style-fill {
-	.wp-block-button__link {
-		background: $color-white;
-		border: 2px solid $color-red;
-		color: $color-black-light;
-		padding: 15px 35px;
-		font-size: 16px;
-		text-transform: uppercase;
-		text-decoration: none;
-		font-weight: 400;
-		transition: all 0.2s;
-		border: 0;
-
-	}
-
-	.wp-block-button__link:hover,
-	.wp-block-button__link:focus {
-		background: darken($color-red, 10%) !important;
-		color: $color-white;
-		transition: all 0.2s;
-	}
-}
-
-
 .wp-block-column figure {
 	margin: 0;
 }
@@ -99,7 +53,8 @@
 		justify-content: center;
 	}
 
-	.wp-block-column {
+	.wp-block-column,
+	.agiledrop-card {
 		background: $color-white-gray;
 		border: 1px solid $color-gray;
 		border-radius: 5px;
@@ -150,6 +105,82 @@
 	}
 }
 
+.cards-jobs {
+	img {
+		height: 60px;
+	}
+
+	.wp-block-group__inner-container {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.agiledrop-card {
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	h2::after {
+		margin: 0 auto;
+	}
+}
+
+.cards-employees {
+	.wp-block-group__inner-container {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.agiledrop-card {
+		position: relative;
+		width: 100%;
+		margin-bottom: 5%;
+		display: flex;
+		justify-content: center;
+	}
+
+	img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+
+	.agiledrop-card__content {
+		position: absolute;
+		bottom: 5%;
+		background: $color-green;
+		color: $color-white;
+		text-align: center;
+		padding: 10px;
+		width: 90%;
+		box-sizing: border-box;
+		color: $color-gray-dark;
+
+		p {
+			margin: 0;
+			font-size: 14px;
+			//font-weight: 700;
+		}
+
+		h2 {
+			color: $color-white;
+			margin: 0 0 5px;
+			padding: 0 0 10px;
+			font-size: 18px;
+
+			&::after {
+				background-color: $color-red;
+				width: 50px;
+				height: 3px;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
 .cards__quotes {
 	.wp-block-column {
 		position: relative;
@@ -172,140 +203,13 @@
 	}
 }
 
-.form {
-	display: flex;
-	flex-direction: column;
-
-	.form__group {
-		display: flex;
-		flex-direction: column;
-		margin-bottom: 20px;
+@include breakpoint(420px) {
+	.cards-employees {
+		.agiledrop-card {
+			width: 48%;
+			margin-bottom: 4%;
+		}
 	}
-
-	.form__required::after {
-		content: ' *';
-		color: $color-red;
-	}
-
-	.form__input,
-	.form__select,
-	.form__textarea {
-		padding: 10px;
-		border: 2px solid $color-gray;
-		border-radius: 5px;
-		margin-top: 10px;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		background-color: $color-white;
-	}
-
-	.form__error {
-		display: none;
-	}
-
-	.form__button {
-		align-self: flex-end;
-		background: $color-red;
-		border: 0;
-		color: $color-white;
-		padding: 15px 35px;
-		font-size: 13px;
-		text-transform: uppercase;
-		font-weight: 400;
-		transition: all 0.2s;
-		border-radius: 50px;
-		cursor: pointer;
-	}
-
-	.form__button:hover {
-		background: darken($color-red, 10%);
-	}
-}
-
-// checkbox & radio styling
-.form__checkbox,
-.form__radio {
-	display: block;
-	position: relative;
-	padding-left: 35px;
-	margin-bottom: 12px;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
-
-.form__checkbox input,
-.form__radio input {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	height: 0;
-	width: 0;
-}
-
-.form__checkbox .checkmark,
-.form__radio .checkmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 20px;
-	width: 20px;
-	background-color: $color-white;
-	border: 2px solid $color-gray;
-}
-
-.form__checkbox .checkmark {
-	border-radius: 5px;
-}
-
-.form__radio .checkmark {
-	border-radius: 50%;
-}
-
-.form__checkbox:hover input ~ .checkmark,
-.form__radio:hover input ~ .checkmark {
-	background-color: $color-gray;
-}
-
-.form__checkbox input:checked ~ .checkmark,
-.form__radio input:checked ~ .checkmark {
-	background-color: $color-gray;
-}
-
-.form__checkbox .checkmark:after,
-.form__radio .checkmark:after {
-	content: "";
-	position: absolute;
-	display: none;
-}
-
-.form__checkbox input:checked ~ .checkmark:after,
-.form__radio input:checked ~ .checkmark:after {
-	display: block;
-}
-
-.form__checkbox .checkmark:after {
-	left: 6px;
-	top: 2px;
-	width: 5px;
-	height: 10px;
-	border: solid $color-green;
-	border-width: 0 3px 3px 0;
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
-}
-
-.form__radio .checkmark:after {
-  top: 6px;
-  left: 6px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: $color-green;
 }
 
 @include breakpoint(601px) {
@@ -322,6 +226,22 @@
 		.wp-block-media-text__content {
 			padding-left: 0;
 			padding-right: 8%;
+		}
+	}
+}
+
+@include breakpoint(768px) {
+	.cards-employees {
+		.agiledrop-card {
+			width: 23%;
+			margin-bottom: 3%;
+		}
+	}
+
+	.cards-jobs {
+		.agiledrop-card {
+			width: 26%;
+			margin-bottom: 3%;
 		}
 	}
 }
