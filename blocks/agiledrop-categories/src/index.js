@@ -39,7 +39,7 @@ registerBlockType( 'agiledrop/agiledrop-categories', {
             },
             setAttributes,
         } = props;
-
+        let posts = [];
         const getAllCategories = () => {
             if ( runGetCategories ) {
                 apiFetch({path: '/wp/v2/categories'}).then(categories => {
@@ -91,7 +91,6 @@ registerBlockType( 'agiledrop/agiledrop-categories', {
             }
         }
         savePost();
-
 
         return (
             <div className="agiledrop-card">

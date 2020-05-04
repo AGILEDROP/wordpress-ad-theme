@@ -58,6 +58,7 @@
         },
         setAttributes
       } = props;
+      let posts = [];
 
       const getAllCategories = () => {
         if (runGetCategories) {
