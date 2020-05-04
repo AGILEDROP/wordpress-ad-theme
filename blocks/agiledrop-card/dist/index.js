@@ -185,13 +185,15 @@
         className: "agiledrop-card"
       }, /*#__PURE__*/React.createElement("img", {
         src: image
-      }), /*#__PURE__*/React.createElement(RichText.Content, {
+      }), /*#__PURE__*/React.createElement("div", {
+        className: "agiledrop-card__content"
+      }, /*#__PURE__*/React.createElement(RichText.Content, {
         tagName: "h2",
         value: title
       }), /*#__PURE__*/React.createElement(RichText.Content, {
         tagName: "p",
         value: description
-      }));
+      })));
     }
   });
 })(window.wp);

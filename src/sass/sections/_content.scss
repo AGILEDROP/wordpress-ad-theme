@@ -117,8 +117,67 @@
 	}
 
 	.agiledrop-card {
-		width: 26%;
+		width: 100%;
 		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	h2::after {
+		margin: 0 auto;
+	}
+}
+
+.cards-employees {
+	.wp-block-group__inner-container {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.agiledrop-card {
+		position: relative;
+		width: 100%;
+		margin-bottom: 5%;
+		display: flex;
+		justify-content: center;
+	}
+
+	img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+	}
+
+	.agiledrop-card__content {
+		position: absolute;
+		bottom: 5%;
+		background: $color-green;
+		color: $color-white;
+		text-align: center;
+		padding: 10px;
+		width: 90%;
+		box-sizing: border-box;
+		color: $color-gray-dark;
+
+		p {
+			margin: 0;
+			font-size: 14px;
+			//font-weight: 700;
+		}
+
+		h2 {
+			color: $color-white;
+			margin: 0 0 5px;
+			padding: 0 0 10px;
+			font-size: 18px;
+
+			&::after {
+				background-color: $color-red;
+				width: 50px;
+				height: 3px;
+				margin: 0 auto;
+			}
+		}
 	}
 }
 
@@ -144,6 +203,15 @@
 	}
 }
 
+@include breakpoint(420px) {
+	.cards-employees {
+		.agiledrop-card {
+			width: 48%;
+			margin-bottom: 4%;
+		}
+	}
+}
+
 @include breakpoint(601px) {
 	.wp-block-media-text {
 		display: grid;
@@ -158,6 +226,22 @@
 		.wp-block-media-text__content {
 			padding-left: 0;
 			padding-right: 8%;
+		}
+	}
+}
+
+@include breakpoint(768px) {
+	.cards-employees {
+		.agiledrop-card {
+			width: 23%;
+			margin-bottom: 3%;
+		}
+	}
+
+	.cards-jobs {
+		.agiledrop-card {
+			width: 26%;
+			margin-bottom: 3%;
 		}
 	}
 }
