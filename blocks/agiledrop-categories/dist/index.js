@@ -42,11 +42,7 @@
         source: 'children',
         selector: 'h2'
       },
-      content: {
-        type: 'array',
-        source: 'children',
-        selector: 'p'
-      }
+      content: {}
     },
     edit: props => {
       const {
@@ -62,7 +58,6 @@
         },
         setAttributes
       } = props;
-      let posts = [];
 
       const getAllCategories = () => {
         if (runGetCategories) {
@@ -161,9 +156,11 @@
       })), /*#__PURE__*/React.createElement(RichText.Content, {
         tagName: "h2",
         value: title
-      }), /*#__PURE__*/React.createElement(RichText.Content, {
-        tagName: "p",
-        value: content
+      }), /*#__PURE__*/React.createElement("div", {
+        class: "agiledrop-card__content",
+        dangerouslySetInnerHTML: {
+          __html: content
+        }
       }));
     },
     save: props => {
@@ -178,9 +175,11 @@
       }, /*#__PURE__*/React.createElement(RichText.Content, {
         tagName: "h2",
         value: title
-      }), /*#__PURE__*/React.createElement(RichText.Content, {
-        tagName: "p",
-        value: content
+      }), /*#__PURE__*/React.createElement("div", {
+        class: "agiledrop-card__content",
+        dangerouslySetInnerHTML: {
+          __html: content
+        }
       }));
     }
   });

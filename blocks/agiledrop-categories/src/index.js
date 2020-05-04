@@ -20,11 +20,7 @@ registerBlockType( 'agiledrop/agiledrop-categories', {
             source: 'children',
             selector: 'h2',
         },
-        content: {
-            type: 'array',
-            source: 'children',
-            selector: 'p',
-        },
+        content: {},
 
     },
 
@@ -43,8 +39,6 @@ registerBlockType( 'agiledrop/agiledrop-categories', {
             },
             setAttributes,
         } = props;
-
-        let posts = [];
 
         const getAllCategories = () => {
             if ( runGetCategories ) {
@@ -117,8 +111,7 @@ registerBlockType( 'agiledrop/agiledrop-categories', {
 
                 </InspectorControls>
                 <RichText.Content tagName="h2" value={ title } />
-                <RichText.Content tagName="p" value={ content } />
-
+                <div class="agiledrop-card__content" dangerouslySetInnerHTML={ { __html: content } }></div>
             </div>
         );
     },
@@ -129,13 +122,10 @@ registerBlockType( 'agiledrop/agiledrop-categories', {
                 content
             }
         } = props;
-
-
         return (
             <div className="agiledrop-card">
                 <RichText.Content tagName="h2" value={ title } />
-                <RichText.Content tagName="p" value={ content } />
-
+                <div class="agiledrop-card__content" dangerouslySetInnerHTML={ { __html: content } }></div>
             </div>
         );
     },
