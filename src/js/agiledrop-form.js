@@ -3,48 +3,42 @@ jQuery(document).ready(function( $ ) {
     $('#agiledrop-form').on('submit', function(e) {
         e.preventDefault();
         var form = $(this);
-        var name    = form.find('#name').val(),
-            company = form.find( '#company' ).val(),
-            email   = form.find( '#email' ).val(),
-            subject = form.find( '#subject' ).val(),
-            message = form.find( '#message' ).val(),
-            ajaxUrl = form.data( 'url');
+        var name     = form.find('#name').val(),
+            email    = form.find( '#email' ).val(),
+            location = form.find( '#location').val(),
+            status   = $('input[name=status]:checked', form).val(),
+            job      =  form.find( '#zaposlitev').prop("checked"),
+            dataProcessing = form.find( '#obdelava-podatkov').prop("checked"),
+            ajaxUrl  = form.data( 'url');
+
 
         if ( name === '') {
-            $('#name').addClass('input-error');
+            $('#name-error').css("display", "grid");
             $('#name-error').text( 'Name field required' );
             return;
         }
-        if ( company === '') {
-            $('#company').addClass('input-error');
-            $('#company-error').text( 'Company field required' );
-            return;
-        }
-        if ( subject === '') {
-            $('#subject').addClass('input-error');
-            $('#subject-error').text( 'Subject field required' );
-            return;
-        }
         if ( email === '') {
-            $('#email').addClass('input-error');
+            $('#email-error').css("display", "grid");
             $('#email-error').text( 'Email field required' );
             return;
         }
-        if ( message === '') {
-            $('#message').addClass('input-error');
-            $('#message-error').text( 'Message field required' );
+        if ( location === '') {
+            $('#location-error').css("display", "grid");
+            $('#location-error').text( 'Location is required' );
             return;
         }
+
 
         $.ajax({
             url: ajaxUrl,
             type: 'post',
             data: {
                 name: name,
-                company: company,
                 email: email,
-                subject: subject,
-                message: message,
+                location: location,
+                status: status,
+                job: job,
+                dataProcessing: dataProcessing,
                 action: 'agiledrop_save_form'
             },
             error: function ( response ) {
