@@ -3,54 +3,55 @@ registerBlockType( 'agiledrop/agiledrop-card', {
 	icon: 'index-card',
 	category: 'layout',
 	attributes: {
-		postTypes: {
-			default: [
-				{ value: 'agiledrop-jobs', label: 'agiledrop-jobs' },
-				{ value: 'agiledrop-employees', label: 'agiledrop-employees' },
-			]
+		runGetPostTypes:{
+			default: true,
 		},
+		postTypes:[],
 		selectedPostType:{
 			default: 'agiledrop-jobs',
 		},
 		runGetPosts: {
 			default: true,
 		},
-		selectPost:[{}],
+		selectPost:[],
 		selectedPost: {},
 		title: {
 			type: 'array',
 			source: 'children',
 			selector: 'h2',
 		},
-		description: {
-			type: 'array',
-			source: 'children',
-			selector: 'p',
-		},
-		image:{
-			type: 'string',
-			source: 'attribute',
-			selector: 'img',
-			attribute: 'src',
-		}
+		content:{}
 
 	},
 	edit: ( props ) => {
 		const {
 			attributes:{
+				runGetPostTypes,
 				postTypes,
 				selectedPostType,
 				runGetPosts,
 				selectPost,
 				selectedPost,
 				title,
-				description,
-				image
+				content,
 			},
 
 			setAttributes,
 		} = props;
 		let posts = [];
+
+		const getAllPostTypes = () => {
+			if ( runGetPostTypes ) {
+				apiFetch({path:'/agiledrop/v1/custom-post-types'}).then( postTypes => {
+					let allPostTypes = postTypes.map( postType => {
+						return { value: postType, label: postType }
+					})
+					setAttributes({postTypes: allPostTypes});
+				})
+				setAttributes({runGetPostTypes:false});
+			}
+		}
+		getAllPostTypes();
 
 		const onChangePostType = ( value ) => {
 			setAttributes( { runGetPosts: true, selectedPostType: value } );
@@ -58,42 +59,35 @@ registerBlockType( 'agiledrop/agiledrop-card', {
 
 		const getPosts = () => {
 			if ( runGetPosts ) {
-				let allPosts = [];
-				let select = [];
-
-				apiFetch( { path: '/agiledrop/v1/' + selectedPostType } ).then( posts => {
-					if ( posts.length != 0 ) {
-						for ( let i in posts ) {
-							let post;
-							let oneSelect
-							if ( posts.hasOwnProperty( i ) ) {
-								post = {id: i, title: posts[i].title, content: posts[i].text, img: posts[i].image };
-								oneSelect = { value: posts[i].title, label: posts[i].title }
+				apiFetch( { path: '/agiledrop/v1/' + selectedPostType } )
+					.then( posts => {
+						let allPosts = posts.map( obj => {
+							if ( obj.post_title ) {
+								return {id:obj.ID, title:obj.post_title, content: obj.post_content}
 							}
-							allPosts.push( post );
-							select.push( oneSelect );
-						}
-						setAttributes( { selectPost: select, selectedPost: select[0].value } );
-					}
-
-				} );
-				this.posts = allPosts;
+						});
+						let selectPosts = posts.map( obj => {
+							return { value:obj.ID, label:obj.post_title}
+						})
+						this.posts = allPosts;
+						setAttributes( { selectPost: selectPosts } );
+					} );
 				setAttributes( { runGetPosts: false } );
 			}
 		};
 		getPosts();
 
 		const onChangePosts = ( value ) => {
-			setAttributes( { selectedPost: value } )
+			setAttributes( { selectedPost: parseInt(value) } )
 		}
 
-		const savePost = ( ) => {
+		const savePost = () => {
 			if ( this.posts ) {
-				for ( let i = 0; i < this.posts.length; i++ ) {
-					if ( this.posts[i].title === selectedPost ) {
-						setAttributes( { title: this.posts[i].title, description: this.posts[i].content, image: this.posts[i].img } );
+				this.posts.map( post => {
+					if ( post.id === selectedPost) {
+						setAttributes({title:post.title, content: post.content})
 					}
-				}
+				})
 			}
 		}
 		savePost();
@@ -114,10 +108,8 @@ registerBlockType( 'agiledrop/agiledrop-card', {
 						onChange={ onChangePosts }
 					/>
 				</InspectorControls>
-				<img src={ image }/>
 				<RichText.Content tagName="h2" value={ title } />
-				<RichText.Content tagName="p" value={ description } />
-
+				<div class="agiledrop-card__content">{content}</div>
 			</div>
 		);
 	},
@@ -125,19 +117,13 @@ registerBlockType( 'agiledrop/agiledrop-card', {
 		const {
 			attributes: {
 				title,
-				description,
-				image
+				content,
 			},
 		} = props;
-
 		return (
 			<div className="agiledrop-card">
-				<img src={ image }/>
-				<div className="agiledrop-card__content">
 				<RichText.Content tagName="h2" value={ title } />
-				<RichText.Content tagName="p" value={ description } />
-				</div>
-
+				<div class="agiledrop-card__content">{content}</div>
 			</div>
 		);
 	},
