@@ -64,6 +64,7 @@
 
 	.wp-block-image {
 		img {
+			width: 100%;
 			height: auto;
 		}
 	}
@@ -92,6 +93,7 @@
 .cards-100 {
 	.wp-block-image {
 		img {
+			width: auto;
 			height: 100px;
 		}
 	}
@@ -100,6 +102,7 @@
 .cards-60 {
 	.wp-block-image {
 		img {
+			width: auto;
 			height: 60px;
 		}
 	}
@@ -150,6 +153,7 @@
 
 	.agiledrop-card__content {
 		position: absolute;
+		left: 5%;
 		bottom: 5%;
 		background: $color-green;
 		color: $color-white;
@@ -214,6 +218,7 @@
 
 @include breakpoint(601px) {
 	.wp-block-media-text {
+		display: -ms-grid;
 		display: grid;
 		
 		.wp-block-media-text__content {
@@ -240,7 +245,7 @@
 
 	.cards-jobs {
 		.agiledrop-card {
-			width: 26%;
+			width: 40%;
 			margin-bottom: 3%;
 		}
 	}
@@ -250,6 +255,14 @@
 	.cards {
 		.wp-block-column:not(:first-child) {
 			margin: 0 0 0 32px;
+		}
+	}
+}
+
+@include breakpoint(1000px) {
+	.cards-jobs {
+		.agiledrop-card {
+			width: 26%;
 		}
 	}
 }

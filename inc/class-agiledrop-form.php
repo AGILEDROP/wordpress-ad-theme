@@ -5,6 +5,7 @@ if ( ! class_exists( 'Agiledrop_Form' ) ) {
 			add_action( 'wp_ajax_nopriv_agiledrop_save_form', array( $this, 'form_save' ) );
 			add_action( 'wp_ajax_agiledrop_save_form', array( $this, 'form_save' ) );
 			add_shortcode( 'agiledrop_contact_form', array( $this, 'contact_form' ) );
+			add_shortcode( 'agiledrop_work_form', array( $this, 'work_form' ) );
 		}
 
 		public function form_save( ) {
@@ -92,7 +93,64 @@ if ( ! class_exists( 'Agiledrop_Form' ) ) {
 					</label>
 				</div>
 				<p id="form-status"></p>
-				<button type="submit" class="form__button">Pošlji</button>
+				<button type="submit" class="form__button form__button-right">Pošlji</button>
+			</form>
+			<?php
+			return ob_get_clean();
+		}
+
+		public function work_form( ) {
+			ob_start();?>
+			<form class="form" id="agiledrop-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+				<div class="form__group">
+					<label class="form__required" for="name">Ime</label>
+					<input type="text" class="form__input" id="name" name="name" required>
+					<p id="name-error" class="form__error"></p>
+				</div>
+				<div class="form__group">
+					<label class="form__required" for="surname">Priimek</label>
+					<input type="text" class="form__input" id="surname" name="surname" required>
+					<p id="name-error" class="form__error"></p>
+				</div>
+				<div class="form__group">
+					<label class="form__required" for="email">E-naslov</label>
+					<input type="email" class="form__input" id="email" name="email" required >
+					<p id="email-error" class="form__error"></p>
+				</div>
+				<div class="form__group">
+					<label for="cv">Življenjepis</label>
+					<input type="file" class="form__input" id="cv" name="cv">
+					<p id="name-error" class="form__error"></p>
+				</div>
+				<div class="form__group">
+					<label for="social">Spletna stran ali LinkedIn profil</label>
+					<input type="text" class="form__input" id="social" name="social">
+					<p id="name-error" class="form__error"></p>
+				</div>
+				<div class="form__group">
+					<label class="form__required" for="experience">Koliko izkušenj imaš kot razvijalec?</label>
+					<input type="text" class="form__input" id="experience" name="experience" required>
+					<p id="name-error" class="form__error"></p>
+				</div>
+				<div class="form__group">
+					<label class="form__required" for="experience">Opiši Wordpress projekt na katerem si izdelal lastno temo ali razširitev</label>
+					<textarea class="form__textarea" id="experience" name="experience" required></textarea>
+					<p id="name-error" class="form__error"></p>
+				</div>
+
+				<div class="form__group">
+					<label class="form__checkbox form__required" for="obdelava-podatkov">
+						Strinjam se z obdelavo podatkov
+						<input type="checkbox" id="obdelava-podatkov" name="obdelava-podatkov">
+						<span class="checkmark"></span>
+					</label>
+					<small>
+						Strinjam se z obdelavo mojih osebnih podatkov za namen morebitne zaposlitve na delovnem mestu, na katerega sem se prijavil. Posredovani osebni podatki se lahko vodijo v evidenci dejavnosti baze iskalcev zaposlitve, v okviru katere upravljavec osebnih podatkov le-te obdeluje z namenom izbire ustreznih in primernih kandidatov za zaposlitev. Osebni podatki se hranijo 3 mesece, nato se izbrišejo. Upravljavec osebnih podatkov je družba Agiledrop, d. o. o., Stegne 11A, 1000 Ljubljana. Seznanjen sem, da lahko soglasje kadarkoli prekličem. O preklicu soglasja bom obvestil neposredno upravljavca osebnih podatkov.
+					</small>
+				</div>
+
+				<p id="form-status"></p>
+				<button type="submit" class="form__button form__button-left">Prijavi se</button>
 			</form>
 			<?php
 			return ob_get_clean();

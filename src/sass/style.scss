@@ -34,5 +34,6 @@ This theme uses CSS BEM (Block Element Modifier) methodology.
 @import "sections/content";
 @import "sections/footer";
 @import "sections/error404";
-
-@import "common/timeline";
+@import "sections/search";
+@import "sections/timeline";
+@import "common/colors";

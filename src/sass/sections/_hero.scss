@@ -48,6 +48,8 @@
 	padding-top: 100px;
 }
 
+_:-ms-fullscreen, :root .hero__text { top: 100px; } // IE11 fix
+
 .hero__container {
 	display: flex;
 	flex-direction: column;
