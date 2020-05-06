@@ -103,62 +103,62 @@ function agiledrop_theme_support()  {
 	add_theme_support( 'editor-color-palette', array(
 		array(
 			'name'  => __( 'White', 'agiledrop' ),
-			'slug'  => 'color-white',
+			'slug'  => 'white',
 			'color'	=> '#FFFFFF',
 		),
 		array(
 			'name'  => __( 'White Gray', 'agiledrop' ),
-			'slug'  => 'color-white-gray',
+			'slug'  => 'white-gray',
 			'color'	=> '#FEFEFF',
 		),
 		array(
 			'name'  => __( 'Green', 'agiledrop' ),
-			'slug'  => 'color-green',
+			'slug'  => 'green',
 			'color'	=> '#32633',
 		),
 		array(
 			'name'  => __( 'Light Green', 'agiledrop' ),
-			'slug'  => 'color-green-light',
+			'slug'  => 'green-light',
 			'color'	=> '#044761',
 		),
 		array(
 			'name'  => __( 'Gray', 'agiledrop' ),
-			'slug'  => 'color-gray',
+			'slug'  => 'gray',
 			'color'	=> '#D4DBDE',
 		),
 		array(
 			'name'  => __( 'Dark Gray', 'agiledrop' ),
-			'slug'  => 'color-dark-gray',
+			'slug'  => 'dark-gray',
 			'color'	=> '#7F8689',
 		),
 		array(
 			'name'  => __( 'Light Gray', 'agiledrop' ),
-			'slug'  => 'color-light-gray',
+			'slug'  => 'light-gray',
 			'color'	=> '#F7F9F9',
 		),
 		array(
 			'name'  => __( 'Light Black', 'agiledrop' ),
-			'slug'  => 'color-light-black',
+			'slug'  => 'light-black',
 			'color'	=> '#1F2122',
 		),
 		array(
 			'name'  => __( 'Orange', 'agiledrop' ),
-			'slug'  => 'color-orange',
+			'slug'  => 'orange',
 			'color'	=> '#FF9F09',
 		),
 		array(
 			'name'  => __( 'Silver', 'agiledrop' ),
-			'slug'  => 'color-silver',
+			'slug'  => 'silver',
 			'color'	=> '#cccccc',
 		),
 		array(
 			'name'  => __( 'Red', 'agiledrop' ),
-			'slug'  => 'color-red',
+			'slug'  => 'red',
 			'color'	=> '#ef4623',
 		),
 		array(
 			'name'  => __( 'Light Red', 'agiledrop' ),
-			'slug'  => 'color-light-red',
+			'slug'  => 'light-red',
 			'color'	=> '#FF7154',
 		),
 	) );
