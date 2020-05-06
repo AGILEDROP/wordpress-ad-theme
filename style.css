@@ -536,7 +536,6 @@ a:active {
 }
 
 .form .form__button {
-  align-self: flex-end;
   background: #ef4623;
   border: 0;
   color: #FFFFFF;
@@ -551,6 +550,14 @@ a:active {
 
 .form .form__button:hover {
   background: #d0300f;
+}
+
+.form .form__button-right {
+  align-self: flex-end;
+}
+
+.form .form__button-left {
+  align-self: flex-start;
 }
 
 .form__checkbox,
@@ -636,9 +643,6 @@ a:active {
 }
 
 .is-style-outline .wp-block-button__link {
-  background: #FFFFFF;
-  border: 2px solid #ef4623;
-  color: #1f2122;
   padding: 5px 15px;
   font-size: 13px;
   text-transform: uppercase;
@@ -656,9 +660,6 @@ a:active {
 }
 
 .is-style-fill .wp-block-button__link {
-  background: #FFFFFF;
-  border: 2px solid #ef4623;
-  color: #1f2122;
   padding: 15px 35px;
   font-size: 16px;
   text-transform: uppercase;
@@ -1022,6 +1023,11 @@ a:active {
   padding-top: 100px;
 }
 
+_:-ms-fullscreen,
+:root .hero__text {
+  top: 100px;
+}
+
 .hero__container {
   display: flex;
   flex-direction: column;
@@ -1212,6 +1218,7 @@ a:active {
 }
 
 .cards .wp-block-image img {
+  width: 100%;
   height: auto;
 }
 
@@ -1236,10 +1243,12 @@ a:active {
 }
 
 .cards-100 .wp-block-image img {
+  width: auto;
   height: 100px;
 }
 
 .cards-60 .wp-block-image img {
+  width: auto;
   height: 60px;
 }
 
@@ -1286,6 +1295,7 @@ a:active {
 
 .cards-employees .agiledrop-card__content {
   position: absolute;
+  left: 5%;
   bottom: 5%;
   background: #032633;
   color: #FFFFFF;
@@ -1344,6 +1354,7 @@ a:active {
 
 @media (min-width: 601px) {
   .wp-block-media-text {
+    display: -ms-grid;
     display: grid;
   }
 
@@ -1365,7 +1376,7 @@ a:active {
   }
 
   .cards-jobs .agiledrop-card {
-    width: 26%;
+    width: 40%;
     margin-bottom: 3%;
   }
 }
@@ -1373,6 +1384,12 @@ a:active {
 @media (min-width: 782px) {
   .cards .wp-block-column:not(:first-child) {
     margin: 0 0 0 32px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .cards-jobs .agiledrop-card {
+    width: 26%;
   }
 }
 
@@ -1607,6 +1624,67 @@ a:active {
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.search {
+  background: #F7F9F9;
+  padding: 30px 0;
+}
+
+.form-jobs {
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form-jobs .form__group {
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 20px 0;
+}
+
+.form-jobs .form__checkboxes {
+  flex-wrap: wrap;
+}
+
+.form-jobs .form__checkbox {
+  margin: 0 20px 10px 0;
+}
+
+.form-jobs .form__input {
+  margin: 0;
+  width: 100%;
+}
+
+.form-jobs .form__button {
+  width: 100%;
+  margin: 10px 0;
+}
+
+@media (min-width: 805px) {
+  .form-jobs {
+    flex-direction: row;
+  }
+
+  .form-jobs .form__group,
+  .form-jobs .form__checkbox,
+  .form-jobs .form__input {
+    margin: 0 20px 0 0;
+  }
+
+  .form-jobs .form__button {
+    width: auto;
+  }
+}
+
+@media (min-width: 1000px) {
+  .form-jobs .form__input {
+    margin: 0 20px 0 0;
+  }
+
+  .form-jobs .form__checkboxes {
+    flex-direction: row;
+  }
 }
 
 .paragraph.paragraph--type--timeline {
@@ -2034,5 +2112,101 @@ a:active {
   .paragraph--type--timeline .item:last-child:before {
     display: block;
   }
+}
+
+.has-red-background-color {
+  background: #ef4623;
+}
+
+.has-light-red-background-color {
+  background: #ff7154;
+}
+
+.has-white-background-color {
+  background: #FFFFFF;
+}
+
+.has-white-gray-background-color {
+  background: #FEFEFF;
+}
+
+.has-green-background-color {
+  background: #032633;
+}
+
+.has-light-green-background-color {
+  background: #044761;
+}
+
+.has-gray-background-color {
+  background: #d4dbde;
+}
+
+.has-dark-gray-background-color {
+  background: #7f8689;
+}
+
+.has-light-gray-background-color {
+  background: #F7F9F9;
+}
+
+.has-light-black-background-color {
+  background: #1f2122;
+}
+
+.has-orange-background-color {
+  background: #FF9F09;
+}
+
+.has-silver-background-color {
+  background: #cccccc;
+}
+
+.has-red-color {
+  color: #ef4623;
+}
+
+.has-light-red-color {
+  color: #ff7154;
+}
+
+.has-white-color {
+  color: #FFFFFF;
+}
+
+.has-white-gray-color {
+  color: #FEFEFF;
+}
+
+.has-green-color {
+  color: #032633;
+}
+
+.has-light-green-color {
+  color: #044761;
+}
+
+.has-gray-color {
+  color: #d4dbde;
+}
+
+.has-dark-gray-color {
+  color: #7f8689;
+}
+
+.has-light-gray-color {
+  color: #F7F9F9;
+}
+
+.has-light-black-color {
+  color: #1f2122;
+}
+
+.has-orange-color {
+  color: #FF9F09;
+}
+
+.has-silver-color {
+  color: #cccccc;
 }
 
