@@ -1,5 +1,4 @@
 jQuery(document).ready(function( $ ) {
-
     $('#agiledrop-form').on('submit', function(e) {
         e.preventDefault();
         var form = $(this);
@@ -50,6 +49,7 @@ jQuery(document).ready(function( $ ) {
                 }
                 else {
                     $('#form-status').text( 'Your message was successfully send.');
+                    $('#agiledrop-form')[0].reset();
                 }
             }
         })

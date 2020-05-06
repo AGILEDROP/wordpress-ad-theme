@@ -2,7 +2,7 @@
 if ( !class_exists('Agiledrop_Rest_Api ') ) {
 	class Agiledrop_Rest_Api extends WP_REST_Controller {
 
-		private $post_types = array( 'agiledrop-hero', 'agiledrop-jobs', 'agiledrop-employees' );
+		private $post_types = array( 'agiledrop-jobs', 'agiledrop-employees' );
 
 		public function __construct() {
 			add_action( 'rest_api_init', array( $this, 'register_api' ) );
@@ -41,32 +41,12 @@ if ( !class_exists('Agiledrop_Rest_Api ') ) {
 			$attributes = $param->get_attributes();
 			$type = $attributes['args']['type'];
 			$all_posts = [];
-			$posts = $this->get_all_posts( $type );
+			return $this->get_all_posts( $type );
 			foreach ( $posts as $post ) {
 				$all_posts[$post->ID]['title'] = $post->post_title;
-				$all_posts[$post->ID]['image'] = $this->get_image( $post->post_content );
-				$all_posts[$post->ID]['text'] = $this->get_text( $post->post_content );
-				$link = $this->get_link( $post->post_content );
-				$all_posts[$post->ID]['link_text'] = $link[0];
-				$all_posts[$post->ID]['link'] = $link[1];
+				$all_posts[$post->ID]['content'] = $post->post_content;
 			}
 			return $all_posts;
-		}
-
-		private function get_image( $content ) {
-			preg_match('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i',$content, $match );
-			return $match[1];
-		}
-
-		private function get_text( $content ) {
-			preg_match("'<p>(.*?)</p>'si", $content, $match);
-			return $match[1];
-		}
-
-		private function get_link( $content ) {
-			preg_match("/<a ?.*>(.*)<\/a>/",$content,$match);
-			preg_match( '~<a(.*?)href="([^"]+)"(.*?)>~', $match[0], $link);
-			return array( $match[1], $link[2] );
 		}
 	}
 }
