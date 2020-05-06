@@ -179,7 +179,7 @@
       return /*#__PURE__*/React.createElement("div", {
         className: "agiledrop-card"
       }, /*#__PURE__*/React.createElement(RichText.Content, {
-        tagName: "h2",
+        tagName: "h3",
         value: title
       }), /*#__PURE__*/React.createElement("div", {
         class: "agiledrop-card__content",
