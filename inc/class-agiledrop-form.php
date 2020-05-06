@@ -4,9 +4,30 @@ if ( ! class_exists( 'Agiledrop_Form' ) ) {
 		public function __construct() {
 			add_action( 'wp_ajax_nopriv_agiledrop_save_form', array( $this, 'form_save' ) );
 			add_action( 'wp_ajax_agiledrop_save_form', array( $this, 'form_save' ) );
+			add_action( 'wp_ajax_nopriv_agiledrop_save_work_form', array( $this, 'work_form_save' ) );
+			add_action( 'wp_ajax_agiledrop_save_work_form', array( $this, 'work_form_save' ) );
 			add_shortcode( 'agiledrop_contact_form', array( $this, 'contact_form' ) );
 			add_shortcode( 'agiledrop_work_form', array( $this, 'work_form' ) );
 		}
+
+		public function work_form_save() {
+		    //@TODO process file
+			$name = wp_strip_all_tags( $_POST['name'] );
+			$surname = wp_strip_all_tags( $_POST['surname'] );
+			$email = wp_strip_all_tags( $_POST['email'] );
+			$social = wp_strip_all_tags( $_POST['social'] );
+			$experience1 = wp_strip_all_tags( $_POST['experience1'] );
+			$experience2 = wp_strip_all_tags( $_POST['experience2'] );
+			$data = 'Ne dovolim uporabo podatkov.';
+			if ( $_POST['dataProcessing'] === true){
+				$data = 'Dovolim uporabo podatkov.';
+			}
+			$from = $name . ' ' . $surname;
+			$message = "Spletna stran: ".$social." Koliko izkušenj: ".$experience1." Projekt: ".$experience1." ".$data;
+
+			return $this->send_mail( $from, $email, $message );
+
+        }
 
 		public function form_save( ) {
 			$name = wp_strip_all_tags( $_POST['name'] );
@@ -45,7 +66,7 @@ if ( ! class_exists( 'Agiledrop_Form' ) ) {
 				<div class="form__group">
 					<label class="form__required" for="name">Ime in Priimek</label>
 					<input type="text" class="form__input" id="name" name="name"  value="<?php echo $_POST['name'];?>" required>
-					<p id="name-error" class="form__error">sdfsd</p>
+					<p id="name-error" class="form__error"></p>
 				</div>
 				<div class="form__group">
 					<label class="form__required" for="email">E-naslov</label>
@@ -101,41 +122,39 @@ if ( ! class_exists( 'Agiledrop_Form' ) ) {
 
 		public function work_form( ) {
 			ob_start();?>
-			<form class="form" id="agiledrop-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
+			<form class="form" id="agiledrop-work-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>" enctype="multipart/form-data">
 				<div class="form__group">
 					<label class="form__required" for="name">Ime</label>
-					<input type="text" class="form__input" id="name" name="name" required>
+					<input type="text" class="form__input" id="name" name="name" >
 					<p id="name-error" class="form__error"></p>
 				</div>
 				<div class="form__group">
 					<label class="form__required" for="surname">Priimek</label>
-					<input type="text" class="form__input" id="surname" name="surname" required>
-					<p id="name-error" class="form__error"></p>
+					<input type="text" class="form__input" id="surname" name="surname" >
+					<p id="surname-error" class="form__error"></p>
 				</div>
 				<div class="form__group">
 					<label class="form__required" for="email">E-naslov</label>
-					<input type="email" class="form__input" id="email" name="email" required >
+					<input type="email" class="form__input" id="email" name="email" >
 					<p id="email-error" class="form__error"></p>
 				</div>
 				<div class="form__group">
 					<label for="cv">Življenjepis</label>
 					<input type="file" class="form__input" id="cv" name="cv">
-					<p id="name-error" class="form__error"></p>
 				</div>
 				<div class="form__group">
 					<label for="social">Spletna stran ali LinkedIn profil</label>
 					<input type="text" class="form__input" id="social" name="social">
-					<p id="name-error" class="form__error"></p>
 				</div>
 				<div class="form__group">
-					<label class="form__required" for="experience">Koliko izkušenj imaš kot razvijalec?</label>
-					<input type="text" class="form__input" id="experience" name="experience" required>
-					<p id="name-error" class="form__error"></p>
+					<label class="form__required" for="experience1">Koliko izkušenj imaš kot razvijalec?</label>
+					<input type="text" class="form__input" id="experience1" name="experience1" >
+					<p id="experience1-error" class="form__error"></p>
 				</div>
 				<div class="form__group">
-					<label class="form__required" for="experience">Opiši Wordpress projekt na katerem si izdelal lastno temo ali razširitev</label>
-					<textarea class="form__textarea" id="experience" name="experience" required></textarea>
-					<p id="name-error" class="form__error"></p>
+					<label class="form__required" for="experience2">Opiši Wordpress projekt na katerem si izdelal lastno temo ali razširitev</label>
+					<textarea class="form__textarea" id="experience2" name="experience2" ></textarea>
+					<p id="experience2-error" class="form__error"></p>
 				</div>
 
 				<div class="form__group">

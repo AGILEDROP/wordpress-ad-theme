@@ -41,6 +41,8 @@ if ( ! class_exists( 'Agiledrop_Enqueues' ) ) {
 			wp_enqueue_script( 'mainNav', get_template_directory_uri() . '/src/js/openNav.js', array(), $theme_version, true );
 			wp_script_add_data( 'agiledrop-js', 'async', true );
 			wp_enqueue_script( 'agiledrop-form-js', get_template_directory_uri() . '/src/js/agiledrop-form.js', array( 'jquery') );
+			wp_enqueue_script( 'agiledrop-work-form-js', get_template_directory_uri() . '/src/js/agiledrop-work-form.js', array( 'jquery') );
+
 		}
 
 		public function admin_scripts() {
