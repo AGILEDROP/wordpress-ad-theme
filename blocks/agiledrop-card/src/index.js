@@ -134,7 +134,7 @@ registerBlockType( 'agiledrop/agiledrop-card', {
 			<div className="agiledrop-card">
 				<img src={ image }/>
 				<div className="agiledrop-card__content">
-				<RichText.Content tagName="h2" value={ title } />
+				<RichText.Content tagName="h3" value={ title } />
 				<RichText.Content tagName="p" value={ description } />
 				</div>
 

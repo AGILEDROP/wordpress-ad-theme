@@ -188,7 +188,7 @@
       }), /*#__PURE__*/React.createElement("div", {
         className: "agiledrop-card__content"
       }, /*#__PURE__*/React.createElement(RichText.Content, {
-        tagName: "h2",
+        tagName: "h3",
         value: title
       }), /*#__PURE__*/React.createElement(RichText.Content, {
         tagName: "p",
