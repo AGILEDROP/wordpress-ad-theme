@@ -163,8 +163,11 @@
         tagName: "h2",
         value: title
       }), /*#__PURE__*/React.createElement("div", {
-        class: "agiledrop-card__content"
-      }, content));
+        class: "agiledrop-card__content",
+        dangerouslySetInnerHTML: {
+          __html: content
+        }
+      }));
     },
     save: props => {
       const {
@@ -179,8 +182,11 @@
         tagName: "h2",
         value: title
       }), /*#__PURE__*/React.createElement("div", {
-        class: "agiledrop-card__content"
-      }, content));
+        class: "agiledrop-card__content",
+        dangerouslySetInnerHTML: {
+          __html: content
+        }
+      }));
     }
   });
 })(window.wp);

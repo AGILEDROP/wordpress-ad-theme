@@ -109,7 +109,7 @@ registerBlockType( 'agiledrop/agiledrop-card', {
 					/>
 				</InspectorControls>
 				<RichText.Content tagName="h2" value={ title } />
-				<div class="agiledrop-card__content">{content}</div>
+				<div class="agiledrop-card__content" dangerouslySetInnerHTML={ { __html: content } }></div>
 			</div>
 		);
 	},
@@ -123,7 +123,7 @@ registerBlockType( 'agiledrop/agiledrop-card', {
 		return (
 			<div className="agiledrop-card">
 				<RichText.Content tagName="h2" value={ title } />
-				<div class="agiledrop-card__content">{content}</div>
+				<div class="agiledrop-card__content" dangerouslySetInnerHTML={ { __html: content } }></div>
 			</div>
 		);
 	},
