@@ -268,7 +268,6 @@
 		    border-radius: 5px;
 		    background-color: $color-green-light;
 		    box-shadow: 3px 3px 14px rgba(38, 33, 44, 0.5);
-		    visibility: hidden;
 		    opacity: 0;
 		    transition: top 200ms ease-out;
 		    min-width: 10em;
@@ -281,6 +280,7 @@
 
 		    	a {
 		    		padding: 10px 20px;
+		    		width: 100%;
 		    	}
 		    }
 		}
@@ -298,8 +298,9 @@
 		    border-bottom: 10px solid $color-green-light;
 		}
 
-		&:hover > ul.sub-menu {
-			visibility: visible;
+		&:hover > ul.sub-menu,
+		&:focus > ul.sub-menu,
+		&:focus-within > ul.sub-menu {
 			opacity: 1;
 		}
 

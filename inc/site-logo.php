@@ -77,7 +77,7 @@ function agiledrop_site_logo( $args = array(), $echo = true ) {
 add_filter( 'get_custom_logo', 'agiledrop_site_logo_filter' );
 function agiledrop_site_logo_filter() {
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$html = sprintf( '<a href="%1$s" class="%2$s" rel="home" itemprop="url">%3$s</a>',
+	$html = sprintf( '<a href="%1$s" class="%2$s" aria-label="Home" rel="home" itemprop="url">%3$s</a>',
 		esc_url( get_home_url( null, '/' ) ),
 		esc_html( 'site-logo__link' ),
 		wp_get_attachment_image( $custom_logo_id, 'full', false, array(

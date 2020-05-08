@@ -45,10 +45,10 @@ if ( !class_exists( 'Agiledrop_helper' ) ) {
 				return '<video autoplay muted loop id="myVideo">
   							<source src="' . $video[0] .  '" type="video/mp4">
 						</video>
-						<img src=' . $image . '>';
+						<img src=' . $image . ' alt="">';
 			}
 
-			return '<img src=' . $image . '>';
+			return '<img src=' . $image . ' alt="">';
 
 		}
 

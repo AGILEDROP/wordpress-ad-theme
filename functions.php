@@ -88,6 +88,11 @@ new Agiledrop_Widget_Area();
  */
 require get_template_directory() . '/inc/svg.php';
 
+/**
+ * Extend navigation menu walker.
+ */
+require get_template_directory() . '/inc/extend-nav-menu-walker.php';
+
 require get_template_directory() . '/blocks/agiledrop-blocks.php';
 
 require get_template_directory() . '/inc/class-agiledrop-form.php';
