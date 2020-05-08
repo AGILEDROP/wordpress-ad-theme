@@ -1347,6 +1347,10 @@ _:-ms-fullscreen,
   justify-content: center;
 }
 
+.cards-employees .agiledrop-card h3 {
+  display: none;
+}
+
 .cards-employees img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1355,6 +1359,14 @@ _:-ms-fullscreen,
 }
 
 .cards-employees .agiledrop-card__content {
+  position: relative;
+  width: 100%;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.cards-employees .agiledrop-card__content .wp-block-group {
   position: absolute;
   left: 5%;
   bottom: 5%;
@@ -1365,6 +1377,14 @@ _:-ms-fullscreen,
   width: 90%;
   box-sizing: border-box;
   color: #7f8689;
+}
+
+.cards-employees .agiledrop-card__content .wp-block-group .wp-block-group__inner-container {
+  flex-direction: column;
+}
+
+.cards-employees .agiledrop-card__content .wp-block-image {
+  margin: 0;
 }
 
 .cards-employees .agiledrop-card__content p {

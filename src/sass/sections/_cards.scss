@@ -98,6 +98,10 @@
 		margin-bottom: 5%;
 		display: flex;
 		justify-content: center;
+
+		h3 {
+			display: none;
+		}
 	}
 
 	img {
@@ -107,16 +111,32 @@
 	}
 
 	.agiledrop-card__content {
-		position: absolute;
-		left: 5%;
-		bottom: 5%;
-		background: $color-green;
-		color: $color-white;
-		text-align: center;
-		padding: 10px;
-		width: 90%;
-		box-sizing: border-box;
-		color: $color-gray-dark;
+		position: relative;
+		width: 100%;
+		margin-bottom: 5%;
+		display: flex;
+		justify-content: center;
+		
+		.wp-block-group {
+			position: absolute;
+			left: 5%;
+			bottom: 5%;
+			background: $color-green;
+			color: $color-white;
+			text-align: center;
+			padding: 10px;
+			width: 90%;
+			box-sizing: border-box;
+			color: $color-gray-dark;
+
+			.wp-block-group__inner-container {
+				flex-direction: column;
+			}
+		}
+
+		.wp-block-image {
+			margin: 0;
+		}
 
 		p {
 			margin: 0;
