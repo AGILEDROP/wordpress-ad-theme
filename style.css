@@ -658,8 +658,8 @@ a:active {
   background: #032633;
 }
 
-.cards-jobs .wp-block-button a:link,
-.cards-jobs .wp-block-button a:visited {
+.cards .wp-block-button a:link,
+.cards .wp-block-button a:visited {
   padding: 5px 15px;
   font-size: 13px;
   text-transform: uppercase;
@@ -668,8 +668,8 @@ a:active {
   transition: all 0.2s;
 }
 
-.cards-jobs .wp-block-button a:hover,
-.cards-jobs .wp-block-button a:focus {
+.cards .wp-block-button a:hover,
+.cards .wp-block-button a:focus {
   background: #d0300f !important;
   color: #FFFFFF;
   transition: all 0.2s;
