@@ -122,7 +122,7 @@ registerBlockType( 'agiledrop/agiledrop-card', {
 		} = props;
 		return (
 			<div className="agiledrop-card">
-				<RichText.Content tagName="h2" value={ title } />
+				<RichText.Content tagName="h3" value={ title } />
 				<div class="agiledrop-card__content" dangerouslySetInnerHTML={ { __html: content } }></div>
 			</div>
 		);

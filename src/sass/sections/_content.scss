@@ -2,6 +2,10 @@
 	padding: 60px 0;
 }
 
+.group__intro {
+	padding: 60px 0 0 0;
+}
+
 .wp-block-group__inner-container {
 	padding-left: 1.5625rem;
 	padding-right: 1.5625rem;
@@ -44,178 +48,6 @@
 	}
 }
 
-.cards {
-	h3 {
-		font-size: 18px;
-	}
-
-	.wp-block-columns {
-		justify-content: center;
-	}
-
-	.wp-block-column,
-	.agiledrop-card {
-		background: $color-white-gray;
-		border: 1px solid $color-gray;
-		border-radius: 5px;
-		padding: 30px;
-		box-shadow: 0 6px 7px rgba(0, 0, 0, 0.08);
-	}
-
-	.wp-block-image {
-		img {
-			width: 100%;
-			height: auto;
-		}
-	}
-
-	.wp-block-column:not(:first-child) {
-		margin: 32px 0 0 0;
-	}
-
-	.wp-block-button__link {
-		padding: 5px 15px;
-		font-size: 13px;
-		font-weight: 400;
-		text-transform: uppercase;
-		text-decoration: none;
-		transition: all 0.2s;
-	}
-
-	.wp-block-button__link:hover,
-	.wp-block-button__link:focus {
-		background: darken($color-red, 10%) !important;
-		color: $color-white;
-		transition: all 0.2s;
-	}
-}
-
-.cards-100 {
-	.wp-block-image {
-		img {
-			width: auto;
-			height: 100px;
-		}
-	}
-}
-
-.cards-60 {
-	.wp-block-image {
-		img {
-			width: auto;
-			height: 60px;
-		}
-	}
-}
-
-.cards-jobs {
-	img {
-		height: 60px;
-	}
-
-	.wp-block-group__inner-container {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-	}
-
-	.agiledrop-card {
-		width: 100%;
-		margin-bottom: 40px;
-		text-align: center;
-	}
-
-	h2::after {
-		margin: 0 auto;
-	}
-}
-
-.cards-employees {
-	.wp-block-group__inner-container {
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
-	}
-
-	.agiledrop-card {
-		position: relative;
-		width: 100%;
-		margin-bottom: 5%;
-		display: flex;
-		justify-content: center;
-	}
-
-	img {
-		object-fit: cover;
-		height: 100%;
-		width: 100%;
-	}
-
-	.agiledrop-card__content {
-		position: absolute;
-		left: 5%;
-		bottom: 5%;
-		background: $color-green;
-		color: $color-white;
-		text-align: center;
-		padding: 10px;
-		width: 90%;
-		box-sizing: border-box;
-		color: $color-gray-dark;
-
-		p {
-			margin: 0;
-			font-size: 14px;
-			//font-weight: 700;
-		}
-
-		h2 {
-			color: $color-white;
-			margin: 0 0 5px;
-			padding: 0 0 10px;
-			font-size: 18px;
-
-			&::after {
-				background-color: $color-red;
-				width: 50px;
-				height: 3px;
-				margin: 0 auto;
-			}
-		}
-	}
-}
-
-.cards__quotes {
-	.wp-block-column {
-		position: relative;
-	}
-
-	.wp-block-column::before {
-		position: absolute;
-		background: $color-black-light;
-		background-image: url(/wp-content/themes/wordpress-ad-theme/images/quotes.svg);
-		background-repeat: no-repeat;
-		background-size: 20px 20px;
-		background-position: center center;
-		content: '';
-		width: 50px;
-		height: 50px;
-		top: 0;
-		left: 50%;
-		border-radius: 50%;
-		transform: translate(-50%,-50%);
-	}
-}
-
-@include breakpoint(420px) {
-	.cards-employees {
-		.agiledrop-card {
-			width: 48%;
-			margin-bottom: 4%;
-		}
-	}
-}
-
 @include breakpoint(601px) {
 	.wp-block-media-text {
 		display: -ms-grid;
@@ -231,38 +63,6 @@
 		.wp-block-media-text__content {
 			padding-left: 0;
 			padding-right: 8%;
-		}
-	}
-}
-
-@include breakpoint(768px) {
-	.cards-employees {
-		.agiledrop-card {
-			width: 23%;
-			margin-bottom: 3%;
-		}
-	}
-
-	.cards-jobs {
-		.agiledrop-card {
-			width: 40%;
-			margin-bottom: 3%;
-		}
-	}
-}
-
-@include breakpoint(782px) {
-	.cards {
-		.wp-block-column:not(:first-child) {
-			margin: 0 0 0 32px;
-		}
-	}
-}
-
-@include breakpoint(1000px) {
-	.cards-jobs {
-		.agiledrop-card {
-			width: 26%;
 		}
 	}
 }
