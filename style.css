@@ -502,6 +502,22 @@ a:active {
   max-width: 1200px;
 }
 
+/* Text meant only for screen readers. */
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -642,8 +658,8 @@ a:active {
   background: #032633;
 }
 
-.is-style-outline .wp-block-button__link {
-  border: 2px solid #ef4623;
+.cards-jobs .wp-block-button a:link,
+.cards-jobs .wp-block-button a:visited {
   padding: 5px 15px;
   font-size: 13px;
   text-transform: uppercase;
@@ -652,15 +668,36 @@ a:active {
   transition: all 0.2s;
 }
 
-.is-style-outline .wp-block-button__link:hover,
-.is-style-outline .wp-block-button__link:focus {
+.cards-jobs .wp-block-button a:hover,
+.cards-jobs .wp-block-button a:focus {
+  background: #d0300f !important;
+  color: #FFFFFF;
+  transition: all 0.2s;
+}
+
+.is-style-outline a:link,
+.is-style-outline a:visited {
+  background: #FFFFFF;
+  border: 2px solid #ef4623;
+  color: #1f2122;
+  padding: 5px 15px;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.is-style-outline a:hover,
+.is-style-outline a:focus {
   background: #d0300f !important;
   border: 2px solid #d0300f;
   color: #FFFFFF;
   transition: all 0.2s;
 }
 
-.is-style-fill .wp-block-button__link {
+.is-style-fill a:link,
+.is-style-fill a:visited {
   padding: 15px 35px;
   font-size: 16px;
   text-transform: uppercase;
@@ -670,8 +707,8 @@ a:active {
   border: 0;
 }
 
-.is-style-fill .wp-block-button__link:hover,
-.is-style-fill .wp-block-button__link:focus {
+.is-style-fill a:hover,
+.is-style-fill a:focus {
   background: #d0300f !important;
   color: #FFFFFF;
   transition: all 0.2s;
@@ -922,7 +959,6 @@ a:active {
     border-radius: 5px;
     background-color: #044761;
     box-shadow: 3px 3px 14px rgba(38, 33, 44, 0.5);
-    visibility: hidden;
     opacity: 0;
     transition: top 200ms ease-out;
     min-width: 10em;
@@ -937,6 +973,7 @@ a:active {
 
   .menu-item-has-children ul.sub-menu li a {
     padding: 10px 20px;
+    width: 100%;
   }
 
   .menu-item-has-children ul.sub-menu::before {
@@ -952,8 +989,9 @@ a:active {
     border-bottom: 10px solid #044761;
   }
 
-  .menu-item-has-children:hover > ul.sub-menu {
-    visibility: visible;
+  .menu-item-has-children:hover > ul.sub-menu,
+  .menu-item-has-children:focus > ul.sub-menu,
+  .menu-item-has-children:focus-within > ul.sub-menu {
     opacity: 1;
   }
 

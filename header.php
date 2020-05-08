@@ -27,7 +27,7 @@
 
 <div id="app" class="page">
 
-	<header class="header" role="header">
+	<header class="header">
 
 		<div class="header__container">
 
@@ -53,6 +53,7 @@
 								'menu_class'     => 'menu-item',
 								'depth'          => 2,
 								'container'      => false,
+								'walker' => new Agiledrop_Nav_Menu()
 							)
 						);
 						?>

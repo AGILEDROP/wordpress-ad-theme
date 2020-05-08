@@ -1,7 +1,8 @@
-.is-style-outline {
-	.wp-block-button__link {
+.cards-jobs .wp-block-button {
+	a:link,
+	a:visited {
 		// background: $color-white;
-		border: 2px solid $color-red;
+		// border: 2px solid $color-red;
 		// color: $color-black-light;
 		padding: 5px 15px;
 		font-size: 13px;
@@ -11,8 +12,31 @@
 		transition: all 0.2s;
 	}
 
-	.wp-block-button__link:hover,
-	.wp-block-button__link:focus {
+	a:hover,
+	a:focus {
+		background: darken($color-red, 10%) !important;
+		//border: 2px solid darken($color-red, 10%);
+		color: $color-white;
+		transition: all 0.2s;
+	}
+}
+
+.is-style-outline {
+	a:link,
+	a:visited {
+		background: $color-white;
+		border: 2px solid $color-red;
+		color: $color-black-light;
+		padding: 5px 15px;
+		font-size: 13px;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-weight: 700;
+		transition: all 0.2s;
+	}
+
+	a:hover,
+	a:focus {
 		background: darken($color-red, 10%) !important;
 		border: 2px solid darken($color-red, 10%);
 		color: $color-white;
@@ -21,7 +45,8 @@
 }
 
 .is-style-fill {
-	.wp-block-button__link {
+	a:link,
+	a:visited {
 		// background: $color-white;
 		// border: 2px solid $color-red;
 		// color: $color-black-light;
@@ -35,8 +60,8 @@
 
 	}
 
-	.wp-block-button__link:hover,
-	.wp-block-button__link:focus {
+	a:hover,
+	a:focus {
 		background: darken($color-red, 10%) !important;
 		color: $color-white;
 		transition: all 0.2s;
