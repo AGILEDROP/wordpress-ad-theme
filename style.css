@@ -732,7 +732,8 @@ a:active {
 }
 
 .cards .wp-block-button a:link,
-.cards .wp-block-button a:visited {
+.cards .wp-block-button a:visited,
+.cards .wp-block-button a:active {
   padding: 5px 15px;
   font-size: 13px;
   text-transform: uppercase;
@@ -749,7 +750,8 @@ a:active {
 }
 
 .is-style-outline a:link,
-.is-style-outline a:visited {
+.is-style-outline a:visited,
+.is-style-outline a:active {
   background: #FFFFFF;
   border: 2px solid #ef4623;
   color: #1f2122;
@@ -770,9 +772,11 @@ a:active {
 }
 
 .is-style-fill a:link,
-.is-style-fill a:visited {
+.is-style-fill a:visited,
+.is-style-fill a:active {
   padding: 15px 35px;
   font-size: 16px;
+  color: #FFFFFF;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 400;
