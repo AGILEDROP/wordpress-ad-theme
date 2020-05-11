@@ -1195,6 +1195,7 @@ _:-ms-fullscreen,
   margin: 0;
   display: block;
   height: 100vw;
+  min-height: 400px;
   max-height: 270px;
 }
 

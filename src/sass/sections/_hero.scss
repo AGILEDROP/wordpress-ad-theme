@@ -103,6 +103,7 @@ _:-ms-fullscreen, :root .hero__text { top: 100px; } // IE11 fix
 		margin: 0;
 		display: block;
 		height: 100vw;
+		min-height: 400px;
 		max-height: 270px;
 
 		img {
