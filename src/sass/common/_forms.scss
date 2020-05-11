@@ -54,6 +54,19 @@
 	.form__button-left {
 		align-self: flex-start;
 	}
+
+	.form__error {
+		background: $color-red-light;
+		margin: 5px 0 0 0;
+		padding: 5px 10px;
+		color: $color-white;
+		font-size: 12px;
+		border-radius: 5px;
+	}
+
+	.form__error-active {
+		display: block;
+	}
 }
 
 // checkbox & radio styling

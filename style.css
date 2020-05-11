@@ -636,6 +636,19 @@ a:active {
   align-self: flex-start;
 }
 
+.form .form__error {
+  background: #ff7154;
+  margin: 5px 0 0 0;
+  padding: 5px 10px;
+  color: #FFFFFF;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.form .form__error-active {
+  display: block;
+}
+
 .form__checkbox,
 .form__radio {
   display: block;

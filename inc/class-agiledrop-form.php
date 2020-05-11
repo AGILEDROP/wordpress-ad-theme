@@ -65,13 +65,13 @@ if ( ! class_exists( 'Agiledrop_Form' ) ) {
 			<form class="form" id="agiledrop-form" action="#" method="post" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 				<div class="form__group">
 					<label class="form__required" for="name">Ime in Priimek</label>
-					<input type="text" class="form__input" id="name" name="name"  value="<?php echo $_POST['name'];?>" required>
+					<input type="text" class="form__input" id="name" name="name"  value="" required>
 					<p id="name-error" class="form__error"></p>
 				</div>
 				<div class="form__group">
 					<label class="form__required" for="email">E-naslov</label>
-					<input type="email" class="form__input" id="email" name="email" value="<?php echo $_POST['email'];?>" required>
-					<p id="email-error" class="form__error"></p>
+					<input type="email" class="form__input" id="email" name="email" value="" required>
+					<p id="email-error" class="form__error form__error-active">This is a test error message</p>
 				</div>
 				<div class="form__group">
 					<label class="form__required" for="location">Lokacija</label>
