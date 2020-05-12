@@ -607,6 +607,10 @@ a:active {
   background-color: #FFFFFF;
 }
 
+.form .form__select {
+  background: url(/wp-content/themes/wordpress-ad-theme/images/chevron-gray.svg) no-repeat right 10px center/18px 15px;
+}
+
 .form .form__error {
   display: none;
 }
