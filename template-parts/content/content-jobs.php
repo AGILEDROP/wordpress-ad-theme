@@ -92,7 +92,7 @@ if ( ! empty( $output ) ) {
     foreach ( $output as $one ) { ?>
         <div class="wp-block-agiledrop-agiledrop-card agiledrop-card">
             <div class="agiledrop-card__content">
-                <h2><?php echo $one->post_title;?></h2>
+                <h3><?php echo $one->post_title;?></h3>
                 <p><?php echo $one->post_content; ?></p>
             </div>
         </div>
@@ -101,7 +101,7 @@ else {
     foreach ( $posts as $post ) { ?>
         <div class="wp-block-agiledrop-agiledrop-card agiledrop-card">
         	<div class="agiledrop-card__content">
-                <h2><?php echo $post->post_title;?></h2>
+                <h3><?php echo $post->post_title;?></h3>
                 <p><?php echo $post->post_content; ?></p>
             </div>
         </div>
