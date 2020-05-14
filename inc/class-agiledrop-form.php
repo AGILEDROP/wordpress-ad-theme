@@ -71,7 +71,7 @@ if ( ! class_exists( 'Agiledrop_Form' ) ) {
 				<div class="form__group">
 					<label class="form__required" for="email">E-naslov</label>
 					<input type="email" class="form__input" id="email" name="email" value="" required>
-					<p id="email-error" class="form__error form__error-active">This is a test error message</p>
+					<p id="email-error" class="form__error form__error-active"></p>
 				</div>
 				<div class="form__group">
 					<label class="form__required" for="location">Lokacija</label>
