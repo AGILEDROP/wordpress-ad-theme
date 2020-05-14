@@ -95,6 +95,6 @@ require get_template_directory() . '/inc/extend-nav-menu-walker.php';
 
 require get_template_directory() . '/blocks/agiledrop-blocks.php';
 
-require get_template_directory() . '/inc/class-agiledrop-form.php';
-new Agiledrop_Form();
+//require get_template_directory() . '/inc/class-agiledrop-form.php';
+//new Agiledrop_Form();
 
