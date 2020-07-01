@@ -15,7 +15,7 @@
   "repositories":[
     {
       "type":"vcs",
-      "url":"git@bitbucket.org:zkoracin/agiledrop-form.git"
+      "url":"git@bitbucket.org:agiledrop/agiledrop-form.git"
     }
   ],
   "require": {
