@@ -69,26 +69,6 @@ function agiledrop_theme_support()  {
 	);
 	//add_theme_support( 'custom-background', $background_args );
 
-	/*
-	 * Add theme support for Custom Header
-	 */
-	$header_args = array(
-		'default-image'          => '',
-		'width'                  => 0,
-		'height'                 => 0,
-		'flex-width'             => false,
-		'flex-height'            => false,
-		'uploads'                => true,
-		'random-default'         => false,
-		'header-text'            => false,
-		'default-text-color'     => '',
-		'wp-head-callback'       => '',
-		'admin-head-callback'    => '',
-		'admin-preview-callback' => '',
-		'video'                  => true,
-		'video-active-callback'  => '',
-	);
-	add_theme_support( 'custom-header', $header_args );
 
 	/*
 	 * Add theme support for HTML5 Semantic Markup.
@@ -120,5 +100,68 @@ function agiledrop_theme_support()  {
 	 */
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => __( 'White', 'agiledrop' ),
+			'slug'  => 'white',
+			'color'	=> '#FFFFFF',
+		),
+		array(
+			'name'  => __( 'White Gray', 'agiledrop' ),
+			'slug'  => 'white-gray',
+			'color'	=> '#FEFEFF',
+		),
+		array(
+			'name'  => __( 'Green', 'agiledrop' ),
+			'slug'  => 'green',
+			'color'	=> '#32633',
+		),
+		array(
+			'name'  => __( 'Light Green', 'agiledrop' ),
+			'slug'  => 'green-light',
+			'color'	=> '#044761',
+		),
+		array(
+			'name'  => __( 'Gray', 'agiledrop' ),
+			'slug'  => 'gray',
+			'color'	=> '#D4DBDE',
+		),
+		array(
+			'name'  => __( 'Dark Gray', 'agiledrop' ),
+			'slug'  => 'dark-gray',
+			'color'	=> '#7F8689',
+		),
+		array(
+			'name'  => __( 'Light Gray', 'agiledrop' ),
+			'slug'  => 'light-gray',
+			'color'	=> '#F7F9F9',
+		),
+		array(
+			'name'  => __( 'Light Black', 'agiledrop' ),
+			'slug'  => 'light-black',
+			'color'	=> '#1F2122',
+		),
+		array(
+			'name'  => __( 'Orange', 'agiledrop' ),
+			'slug'  => 'orange',
+			'color'	=> '#FF9F09',
+		),
+		array(
+			'name'  => __( 'Silver', 'agiledrop' ),
+			'slug'  => 'silver',
+			'color'	=> '#cccccc',
+		),
+		array(
+			'name'  => __( 'Red', 'agiledrop' ),
+			'slug'  => 'red',
+			'color'	=> '#ef4623',
+		),
+		array(
+			'name'  => __( 'Light Red', 'agiledrop' ),
+			'slug'  => 'light-red',
+			'color'	=> '#FF7154',
+		),
+	) );
+	
 }
 add_action( 'after_setup_theme', 'agiledrop_theme_support' );

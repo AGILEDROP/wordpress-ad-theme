@@ -1,0 +1,43 @@
+{
+  "name": "agiledrop/wordpress-ad-theme",
+  "description": "Custom theme based on Agiledrop site.",
+  "keywords": ["wordpress", "theme", "agiledrop"],
+  "homepage": "https://www.agiledrop.si/",
+  "license": "MIT",
+  "authors": [{
+    "name": "Agiledrop",
+    "email": "info@agiledrop.com",
+    "homepage": "https://agiledrop.com"
+  }],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "type": "wordpress-theme",
+  "repositories":[
+    {
+      "type":"vcs",
+      "url":"git@bitbucket.org:agiledrop/agiledrop-form.git"
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "composer/installers": "^1.4",
+    "slowprog/composer-copy-file": "~0.3",
+    "agiledrop/agiledrop-form": "*"
+  },
+  "extra": {
+    "installer-paths": {
+      "plugins/{$name}/": ["type:wordpress-plugin"]
+    },
+    "copy-file": {
+      "plugins/": "../../plugins/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "SlowProg\\CopyFile\\ScriptHandler::copy"
+    ],
+    "post-update-cmd": [
+      "SlowProg\\CopyFile\\ScriptHandler::copy"
+    ]
+  }
+}

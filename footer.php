@@ -10,66 +10,48 @@
  */
 
 ?>
+<footer class="footer">
+    <div class="footer__top">
+        <div class="footer__container container">
 
-    <footer class="agile-footer">
-        <div class="footer-container container">
-            <div class="region region-footer">
-                <div class="block-footerinfo">
-                    <?php
-                        $cat_id = get_cat_ID( 'Business Locations');
-                        $posts = get_posts( array( 'orderby' => 'date', 'order' => 'ASC', 'numberposts' => -1, 'category' => $cat_id, 'post_status' => 'publish' ) );
-                        if ( !empty( $posts ) ) {
-                           foreach ( $posts as $post ) {
-                               echo "<h4>$post->post_title</h4>";
-                               echo "<p>$post->post_content</p>";
-                           }
-                        }
-                    ?>
-	                <?php if ( has_nav_menu( 'footer-social-menu' ) ) : ?>
-                        <nav class="footer-social-menu">
-			                <?php
-			                wp_nav_menu(
-				                array(
-					                'theme_location' => 'footer-social-menu',
-					                'menu_class'     => 'footer-social-menu__items',
-					                'depth'          => 1,
-				                )
-			                );
-			                ?>
-                        </nav>
-	                <?php endif; ?>
-                </div>
-                <div class="block-footer-menu">
-	                <?php if ( has_nav_menu( 'footer-menu' ) ) : ?>
-                        <nav class="footer-menu">
-			                <?php
-			                wp_nav_menu(
-				                array(
-					                'theme_location' => 'footer-menu',
-					                'menu_class'     => 'footer-menu__items',
-					                'depth'          => 1,
-				                )
-			                );
-			                ?>
-                        </nav>
-	                <?php endif; ?>
-                </div>
+            <div class="footer__left">
+                <div class="footer__inner">
+	                <div class="footer__inner-left">
+		                <?php
+		                if ( is_active_sidebar( 'left-first-footer' ) ) {
+			                dynamic_sidebar( 'left-first-footer' );
+		                }
+		                ?>
+	                </div>
+	                <div class="footer__inner-right">
+		                <?php
+		                if ( is_active_sidebar( 'left-second-footer' ) ) {
+			                dynamic_sidebar( 'left-second-footer' );
+		                }
+		                if ( is_active_sidebar( 'footer-social' ) ) { ?>
+			                <div class="footer__inner-socials"><?php dynamic_sidebar( 'footer-social' ); ?></div>
+		                <?php } ?>
+	                </div>
+	            </div>
+
             </div>
-        </div>
-
-    </footer>
-    <div class="agile-copyright">
-        <div class="copyright-container container">
-            <div class="region region-copyright">
-                <div class="left"></div>
-                <div class="right"></div>
+            <div class="footer__right">
+	            <?php
+	            if ( is_active_sidebar( 'right-footer' ) ) {
+		            dynamic_sidebar( 'right-footer' );
+	            }
+	            ?>
             </div>
         </div>
     </div>
-
-</div><!-- #app -->
+    <div class="footer__bottom">
+        <div class="container">
+            <div class="footer__copyright">&copy; 2013-<?php echo date('Y'); ?> AGILEDROP D.O.O.</div>
+			<div class="footer__cms">Sistem za izdelavo spletnih strani: <a href="#">Wordpress</a></div>
+        </div>
+    </div>
+</footer>
 
 <?php wp_footer(); ?>
 </body>
-<kldsjfsldk></kldsjfsldk>
 </html>

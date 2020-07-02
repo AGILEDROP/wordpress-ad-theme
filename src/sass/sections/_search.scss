@@ -1,0 +1,62 @@
+.search {
+	background: $color-gray-light;
+	padding: 30px 0;
+}
+
+.form-jobs {
+	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: wrap;
+
+	.form__group {
+		flex-direction: row;
+		align-items: center;
+		margin: 0 0 20px 0;
+	}
+
+	.form__checkboxes {
+		flex-wrap: wrap;
+	}
+
+	.form__checkbox {
+		margin: 0 20px 10px 0;
+	}
+
+	.form__input {
+		margin: 0;
+		width: 100%;
+	}
+
+	.form__button {
+		width: 100%;
+		margin: 10px 0;
+	}
+}
+
+@include breakpoint(805px) {
+	.form-jobs {
+		flex-direction: row;
+
+		.form__group,
+		.form__checkbox,
+		.form__input {
+			margin: 0 20px 0 0;
+		}
+
+		.form__button {
+			width: auto;
+		}
+	}
+}
+
+@include breakpoint(1000px) {
+	.form-jobs {
+		.form__input {
+			margin: 0 20px 0 0;
+		}
+
+		.form__checkboxes {
+			flex-direction: row;
+		}
+	}
+}

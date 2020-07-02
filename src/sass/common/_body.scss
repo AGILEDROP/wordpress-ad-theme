@@ -1,0 +1,117 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	line-height: 1.15;
+}
+
+h2 {
+	position: relative;
+	margin-bottom: 15px;
+	padding-bottom: 30px;
+	color: $color-green;
+	font-size: 24px;
+
+	&::after {
+		position: absolute;
+		content: "";
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 5px;
+		width: 115px;
+		background-color: $color-orange;
+	}
+}
+
+h3 {
+	position: relative;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	color: $color-green;
+	font-size: 24px;
+
+	&::after {
+		position: absolute;
+		content: "";
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		width: 50px;
+		background-color: $color-red;
+	}
+}
+
+h4 {
+	position: relative;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	color: $color-green;
+	font-size: 18px;
+
+	&::after {
+		position: absolute;
+		content: "";
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 3px;
+		width: 50px;
+		background-color: $color-red;
+	}
+}
+
+.has-text-align-center {
+	&::after {
+		margin: 0 auto;
+	}
+}
+
+a:link {
+	text-decoration: underline;
+	color: $color-red-light;
+}
+
+a:visited {
+	text-decoration: underline;
+	color: $color-red-light;
+}
+
+a:hover {
+	text-decoration: none;
+	color: $color-red-light;
+}
+
+a:active {
+	text-decoration: underline;
+	color: $color-red-light;
+}
+
+.container {
+	padding-left: 1.5625rem;
+	padding-right: 1.5625rem;
+	position: relative;
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
